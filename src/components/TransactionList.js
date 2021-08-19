@@ -6,6 +6,7 @@ import { BiCheckCircle } from "react-icons/bi";
 import { ImCross } from "react-icons/im";
 import { BsSearch } from "react-icons/bs";
 import not_found from "../assets/images/not_found.svg";
+import  "../styles/customStyle.css"
 const TransactionList = ({ data, isLoading, error,isLoadingFilter, errors }) => {
 
   return(
@@ -13,9 +14,8 @@ const TransactionList = ({ data, isLoading, error,isLoadingFilter, errors }) => 
 <>
 {/* <h3>Income Transaction</h3> */}
 {/* <br></br> */}
-  <Row>
-
-    <Table striped bordered hover >
+    
+    <Table  striped bordered hover style={{width:"900px"}} >
 <thead style={{backgroundColor:"#E5E5E5"}}>
   <tr>
   <th>No</th>
@@ -105,7 +105,6 @@ const TransactionList = ({ data, isLoading, error,isLoadingFilter, errors }) => 
         
       ))}
       </Table>
-  </Row>
   </>
 
 )
