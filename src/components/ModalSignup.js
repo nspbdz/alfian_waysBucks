@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Modal, Button,Row,Col, Form } from "react-bootstrap";
 import userData from "../data/User"
-const fs = require('fs');
 
 const ModalSignin = (props) => {
  
@@ -24,17 +23,6 @@ console.log(data)
     console.log(data)
     console.log(userData)
 
-    let dataParse=JSON.stringify(data)
-  console.log(dataParse)
-console.log(data.email)
-var temp = new Object();
-    temp["id"] = 5;
-    temp["fullname"] = data.fullname;
-    temp["email"] = data.email;
-    temp["password"] = data.password;
-
-    userData.push(temp);
-   console.log(temp)
   };
   return (
     <Modal show={show} onHide={handleClose} centered>
