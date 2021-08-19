@@ -1,7 +1,6 @@
 import {React} from "react"
 import { BrowserRouter as Router, Route, Switch,Link } from "react-router-dom";
 import { BsCalendar } from 'react-icons/bs';
-import { setAuthToken } from "../config/api";
 
 import {Dropdown} from "react-bootstrap"
 import { useContext,useState } from "react"
@@ -13,7 +12,6 @@ import { BiReceipt } from "react-icons/bi";
 import { ImExit } from "react-icons/im";
 
 // import userData from '../data/User'
-import Profile from "../pages/Profile";
 
 function UserDropdown(){
   const [state, dispatch] = useContext(UserContext);
@@ -21,7 +19,7 @@ const handleSignout = (e) => {
     dispatch({
       type: "LOGOUT",
     });
-    setAuthToken();
+    // setAuthToken();
   };
   const contextValue = useContext(UserContext);
   // console.log(contextValue[0].user.name)
