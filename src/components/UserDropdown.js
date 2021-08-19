@@ -14,16 +14,11 @@ import { ImExit } from "react-icons/im";
 // import userData from '../data/User'
 
 function UserDropdown(){
-  const [state, dispatch] = useContext(UserContext);
-const handleSignout = (e) => {
-    dispatch({
-      type: "LOGOUT",
-    });
-    // setAuthToken();
-  };
-  const contextValue = useContext(UserContext);
+  // const [state, dispatch] = useContext(UserContext);
+
+  // const contextValue = useContext(UserContext);
   // console.log(contextValue[0].user.name)
-  const userlogin=contextValue[0].user.username
+  // const userlogin=contextValue[0].user.username
   // console.log(userlogin);
   // console.log(state);
 
@@ -34,7 +29,7 @@ const handleSignout = (e) => {
 
 
 
-  const userFilter = userData.filter(item => ( item.username === userlogin ));
+  // const userFilter = userData.filter(item => ( item.username === userlogin ));
  
 
     return (
@@ -63,7 +58,7 @@ const handleSignout = (e) => {
     <Row>
         <Col sm="2"> <ImExit style={{color:"#613D2B"}} /> </Col>
         <Col sm="2">
-    <Link to="/" onClick={handleSignout} style={{backgroundColor:"transparent"}} className="btn btn-light">Logout</Link>
+    {/* <Link to="/" onClick={handleSignout} style={{backgroundColor:"transparent"}} className="btn btn-light">Logout</Link> */}
           
         </Col>
       </Row>

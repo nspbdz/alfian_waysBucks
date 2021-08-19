@@ -23,6 +23,7 @@ const App = () => {
       <Router>
         <UserContextProvider>
           <CartContextProvider>
+            <Header />
             <Container fluid>
               <Switch>
                 <Route exact path="/" component={Home} />

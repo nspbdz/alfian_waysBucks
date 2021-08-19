@@ -1,0 +1,15 @@
+{
+    "users":[
+        {
+            "id":1,
+            "fullame":"Denu",
+            "email":"Denu@gmail.com"
+          },
+          {
+            "id":2,
+            "fullame":"Denus",
+            "email":"Denus@gmail.com"
+          }
+    ]
+}
+
