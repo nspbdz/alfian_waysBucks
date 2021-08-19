@@ -5,12 +5,14 @@ import data from "../data/fakeData";
 import Jumbotron from "../../src/assets/images/Jumbotron.svg";
 import { useState, useContext, useEffect } from "react";
 import { UserContext } from "../contexts/userContext";
+import TransactionList from "../components/TransactionList"
+import TransactionData from "../data/Transaction"
 
 const Home = () => {
   const {state, dispatch} = useContext(UserContext);
 console.log(state)
 console.log(state.isLogin)
-
+console.log(TransactionData)
   return (
     <Container style={{display:'flex'}} >
         {state.isLogin==true && state.user.id==2 &&(
@@ -23,10 +25,10 @@ console.log(state.isLogin)
   
     </Row>
       )}
-        {/* {state.isLogin==true && state.user.id==1 &&(
+         {state.isLogin==true && state.user.id==1 &&(
 
-
-        )} */}
+          <TransactionList data={TransactionData} />
+        )} 
 
 
       </Container>
