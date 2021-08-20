@@ -2,7 +2,7 @@ import { useState,useContext,useEffect } from "react";
 import {Row,Col, Form, Button,InputGroup,FormControl } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
 import { useHistory,Router,Link } from "react-router-dom";
-import data from "../../data/data.json"; 
+import data from "../../data/product.json"; 
 import topingadd from "../../assets/images/toping/topingadd.svg";
 import "../../styles/customStyle.css";
 
@@ -67,14 +67,14 @@ function AddTopingForm() {
    
        <Form.Group className="mb-3" controlId="name">
          <h4 className="titleForm">Toping</h4>
-         <Form.Control type="text" placeholder="name"  name="name" value={dataUpdate.name} onChange={handleChange} />
+         <Form.Control type="text" placeholder="Nama Toping"  name="name" value={dataUpdate.name} onChange={handleChange} />
        </Form.Group>
      
        <Form.Group className="mb-3" controlId="price">
-         <Form.Control type="text" placeholder="price" name="price" value={dataUpdate.price} onChange={handleChange} />
+         <Form.Control type="text" placeholder="Price" name="price" value={dataUpdate.price} onChange={handleChange} />
        </Form.Group>
        <Form.Group className="mb-3" controlId="image">
-         <Form.Control type="text" placeholder="image" name="image" value={dataUpdate.image} onChange={handleChange} />
+         <Form.Control type="text" placeholder="Photo Product " name="image" value={dataUpdate.image} onChange={handleChange} />
        </Form.Group>
        <br/>
             <Form.Control  style={{paddingTop:"20px"}}

@@ -12,7 +12,7 @@ import Signup from "./pages/Signup";
 import DetailProduct from "./pages/DetailProduct";
 import {CartContextProvider} from "./contexts/cartContext"
 import {UserContextProvider} from "./contexts/userContext";
-import dataFake from "./data/data.json"; 
+import dataFake from "./data/toping.json"; 
 
 /**
  * Our main app

@@ -2,7 +2,7 @@ import { useState,useContext,useEffect } from "react";
 import {Row,Col, Form, Button,InputGroup,FormControl } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
 import { useHistory,Router,Link } from "react-router-dom";
-import data from "../../data/data.json"; 
+import data from "../../data/toping.json"; 
 
 function AddProductForm() {
   console.log(data.user.products)

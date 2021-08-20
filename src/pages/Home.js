@@ -8,7 +8,7 @@ import { UserContext } from "../contexts/userContext";
 import TransactionList from "../components/TransactionList"
 import TransactionData from "../data/Transaction"
 import  "../styles/customStyle.css"
-// import dataFake from "../data/data.json"; 
+// import dataFake from "../data/topinga.json"; 
 
 const Home = () => {
   const WAIT_TIME = 3000; // waktu re render
