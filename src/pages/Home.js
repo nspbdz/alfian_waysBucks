@@ -8,12 +8,45 @@ import { UserContext } from "../contexts/userContext";
 import TransactionList from "../components/TransactionList"
 import TransactionData from "../data/Transaction"
 import  "../styles/customStyle.css"
+// import dataFake from "../data/data.json"; 
 
 const Home = () => {
+  const WAIT_TIME = 3000; // waktu re render
+
   const {state, dispatch} = useContext(UserContext);
-console.log(state)
-console.log(state.isLogin)
-console.log(TransactionData)
+  const [dataState,setDataState]= useState([])
+// console.log(state)
+// console.log(state.isLogin)
+// console.log(TransactionData)
+// console.log(data)
+// const fakeData=dataFake.user.products
+// let JsonString=JSON.stringify(fakeData);
+// localStorage.setItem("data", JsonString)
+// const getLocalStorage=localStorage.getItem("data")
+// const ParseJson=JSON.parse(getLocalStorage)  
+// console.log(getLocalStorage)
+// console.log(ParseJson)
+// console.log(dataFake.user.products)
+
+const getLocalStorage=localStorage.getItem("data")
+const ParseJson=JSON.parse(getLocalStorage)  
+  const parseData = () => {
+    setDataState(ParseJson)
+  }
+  console.log(dataState)
+
+// useEffect(() => { 
+//   parseData()
+//     // const ParseJson=JSON.parse(getLocalStorage)  
+
+// }, []); 
+
+useEffect(() => { //re render every WAIT_TIME
+  const id = setInterval(() => {
+  parseData()
+  }, WAIT_TIME);
+  return () => clearInterval(id);
+}, []); 
   return (
     <>
       <Container  >
@@ -44,7 +77,9 @@ console.log(TransactionData)
             <Col xs="2" >
               <img src={Jumbotron} />
               <p>Let’s Order</p>
-              <CardList data={data}/>
+              <CardList data={dataState}/>
+              {/* <CardList data={data}/> */}
+              
             </Col>
           )}
         </Row>
@@ -56,7 +91,9 @@ console.log(TransactionData)
             <Col md="auto" >
               <img src={Jumbotron} />
               <p>Let’s Order</p>
-              <CardList data={data}/>
+              <CardList data={dataState}/>
+
+              {/* <CardList data={data}/> */}
            </Col>
         )} 
       </Row>

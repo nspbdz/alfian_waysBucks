@@ -8,3 +8,15 @@
   margin-left: auto;
   margin-right: auto;
 }
+.titleForm{
+  margin-bottom: 50px;
+  color: #BD0707;
+}
+.formStyle{
+  padding-left: 40px;
+}
+.formImg{
+  margin-top:20px;
+  width:400px;
+   height:450px;
+}

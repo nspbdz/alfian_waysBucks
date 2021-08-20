@@ -6,7 +6,7 @@ const data = [
   {
     id: 1,
     product: "Ice Coffee Palm Sugar",
-    image: palmSugar,
+    image: "https://media.spokesman.com/photos/2018/10/26/SRX_WITCHES_BREW_3.jpg",
     price: "27.000",
   }, 
   {
