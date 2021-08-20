@@ -11,6 +11,8 @@ import ModalSignin from "./ModalSignin";
 import ModalSignup from "./ModalSignup";
 import Icon from "../assets/images/brand-icon.svg";
 import UserDropdown from "./UserDropdown"
+import AdminDropdown from "./AdminDropdown"
+
 import data from "../data/fakeData";
 
 import "../styles/customStyle.css";
@@ -77,8 +79,7 @@ const Header = () => {
 
          <Row>
            <Col sm="2" style={{paddingRight:"100px"}}>
-          {/* <DropAdmin /> */}
-          <UserDropdown />
+         <AdminDropdown />
            </Col>
            <Col sm="5"></Col>
            <Col sm="5"></Col>

@@ -2,6 +2,8 @@ import {React} from "react"
 import { BrowserRouter as Router, Route, Switch,Link } from "react-router-dom";
 import { BsCalendar } from 'react-icons/bs';
 import IconUser from "../assets/images/IconUser.svg"
+import IconAddProduct from "../assets/images/IconAddProduct.svg"
+import IconAddToping from "../assets/images/IconAddToping.svg"
 import {Dropdown} from "react-bootstrap"
 import { useContext,useState } from "react"
 import {UserContext} from "../contexts/userContext";
@@ -12,7 +14,7 @@ import { BiReceipt } from "react-icons/bi";
 import { ImExit } from "react-icons/im";
 
 
-function UserDropdown(){
+function AdminDropdown(){
   const {state, dispatch} = useContext(UserContext);
 
   const handleLogout = (e) => {
@@ -48,17 +50,26 @@ function UserDropdown(){
 
   <Dropdown.Menu style={{width:"220px"}}>
 
-    <Dropdown.Item >
+    <Dropdown.Item style={{marginBottom:"10px"}} >
        <Row>
-          <Col sm="2"> <img src={IconUser} style={{width:"25px"}} /> </Col>
+          <Col sm="2"> <img src={IconAddProduct} style={{width:"25px"}} /> </Col>
           <Col sm="2">
-             <Link to="/profile" style={{backgroundColor:"transparent",color:"black"}} >Profile</Link>
+             <Link to="/profile" style={{backgroundColor:"transparent",color:"black"}} >Add Product</Link>
+            
+          </Col>
+        </Row>
+   </Dropdown.Item>
+   <Dropdown.Item >
+       <Row>
+          <Col sm="2"> <img src={IconAddToping} style={{width:"30px"}} /> </Col>
+          <Col sm="2">
+             <Link to="/profile" style={{backgroundColor:"transparent",color:"black"}} >Add Toping</Link>
             
           </Col>
         </Row>
    </Dropdown.Item>
     
-    <Dropdown.Divider />
+    <Dropdown.Divider />  
       <Dropdown.Item >
         <Row>
             <Col sm="2"> <ImExit style={{color:"#BD0707",width:"35px",height:"25px"}} /> </Col>
@@ -74,4 +85,4 @@ function UserDropdown(){
         </>
     )
 }
-export default UserDropdown;
+export default AdminDropdown;
