@@ -2,11 +2,12 @@ import { useState,useContext,useEffect } from "react";
 import {Row,Col, Form, Button,InputGroup,FormControl } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
 import { useHistory,Router,Link } from "react-router-dom";
-import data from "../../data/toping.json"; 
-
+import data from "../../data/product.json"; 
+import ModalProduct from "../ModalProduct"
 function AddProductForm() {
   console.log(data.user.products)
   const [dataUpdate, setDataUpdate] = useState([])
+  const [show, setshow] = useState(false);
 
   const [dataProduct, setDataProduct] = useState({
     product:data.user.products
@@ -44,7 +45,8 @@ function AddProductForm() {
 
   })
     ))
-
+  setshow(true)
+    
    
   }
   let JsonString=JSON.stringify(dataProduct);
@@ -89,6 +91,8 @@ function AddProductForm() {
         
               </div>
          </Col>
+      <ModalProduct show={show} handleClose={() => setshow(false)} />
+
          <Col sm="4"></Col>
        </Row>
      

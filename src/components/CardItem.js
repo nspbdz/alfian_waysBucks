@@ -18,10 +18,9 @@ function CardItem({ item, isProduct, handleClick }) {
                   <Card.Img  variant="top" src={item.image} width={241} height={321} style={{ objectFit: "cover" }}   />
                   <Card.Body style={{backgroundColor:"#F6E6DA"}}>
                 
-                    <Card.Title>kopi  {item.name} </Card.Title>
+                    <Card.Title>  {item.name} </Card.Title>
 
-                    <Card.Title>price {item.price} </Card.Title>
-                    <Card.Text>stok {item.stock}</Card.Text>
+                    <Card.Title>Rp. {item.price} </Card.Title>
                   </Card.Body>
                 </Card>
                 

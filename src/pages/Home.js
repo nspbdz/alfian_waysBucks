@@ -15,18 +15,6 @@ const Home = () => {
 
   const {state, dispatch} = useContext(UserContext);
   const [dataState,setDataState]= useState([])
-// console.log(state)
-// console.log(state.isLogin)
-// console.log(TransactionData)
-// console.log(data)
-// const fakeData=dataFake.user.products
-// let JsonString=JSON.stringify(fakeData);
-// localStorage.setItem("data", JsonString)
-// const getLocalStorage=localStorage.getItem("data")
-// const ParseJson=JSON.parse(getLocalStorage)  
-// console.log(getLocalStorage)
-// console.log(ParseJson)
-// console.log(dataFake.user.products)
 
 const getLocalStorage=localStorage.getItem("data")
 const ParseJson=JSON.parse(getLocalStorage)  
@@ -51,9 +39,9 @@ useEffect(() => { //re render every WAIT_TIME
     <>
       <Container  >
 
-        <h3 className="title">Income Transaction</h3>
         {state.isLogin==true && state.user.id==1 &&(
           <>
+          <h3 className="title">Income Transaction</h3>
         <Row className="justify-content-md-center" >
           <>
 

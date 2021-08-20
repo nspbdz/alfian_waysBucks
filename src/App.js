@@ -12,19 +12,19 @@ import Signup from "./pages/Signup";
 import DetailProduct from "./pages/DetailProduct";
 import {CartContextProvider} from "./contexts/cartContext"
 import {UserContextProvider} from "./contexts/userContext";
-import dataFake from "./data/toping.json"; 
+import dataFake from "./data/product.json"; 
+import dataToping from "./data/toping.json"; 
 
-/**
- * Our main app
- * For routing, make sure to use BrowserRouter, Switch, and Route
- * Route important attribute: path and component
- * @returns
- */
 const App = () => {
 
   const fakeData=dataFake.user.products
   let JsonString=JSON.stringify(fakeData);
   localStorage.setItem("data", JsonString)
+
+  const dataTopings=dataToping.user.toping
+  console.log(dataTopings)
+  let toping=JSON.stringify(dataTopings);
+  localStorage.setItem("dataToping", toping)
   return (
     <div className="App">
       <Router>

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Row,Button, Col } from "react-bootstrap";
 import AddProductForm from "../components/form/AddProductForm";
 // import ProductDetailItem from "../components/ProductDetailItem"
-import data from "../data/toping.json"; 
+import data from "../data/product.json"; 
 
 function AddProduct(props) {
 
