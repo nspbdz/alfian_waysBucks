@@ -4,6 +4,8 @@ import { Container } from "react-bootstrap";
 
 import PrivateRoute from "./components/route/PrivateRoute";
 import Home from "./pages/Home";
+import AddToping from "./pages/AddToping";
+import AddProduct from "./pages/AddProduct";
 import Header from "./components/Header";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
@@ -28,6 +30,8 @@ const App = () => {
               <Switch>
                 <Route exact path="/" component={Home} />
                 <PrivateRoute exact path="/product/:id" component={DetailProduct} />
+                <PrivateRoute exact path="/addproduct" component={AddProduct} />
+                <PrivateRoute exact path="/addtoping" component={AddToping} />
                 <Route exact path="/signup" component={Signup} />
               </Switch>
             </Container>

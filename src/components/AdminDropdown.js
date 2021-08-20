@@ -54,7 +54,7 @@ function AdminDropdown(){
        <Row>
           <Col sm="2"> <img src={IconAddProduct} style={{width:"25px"}} /> </Col>
           <Col sm="2">
-             <Link to="/profile" style={{backgroundColor:"transparent",color:"black"}} >Add Product</Link>
+             <Link to="/addproduct" style={{backgroundColor:"transparent",color:"black"}} >Add Product</Link>
             
           </Col>
         </Row>
@@ -63,7 +63,7 @@ function AdminDropdown(){
        <Row>
           <Col sm="2"> <img src={IconAddToping} style={{width:"30px"}} /> </Col>
           <Col sm="2">
-             <Link to="/profile" style={{backgroundColor:"transparent",color:"black"}} >Add Toping</Link>
+             <Link to="/addtoping" style={{backgroundColor:"transparent",color:"black"}} >Add Toping</Link>
             
           </Col>
         </Row>
