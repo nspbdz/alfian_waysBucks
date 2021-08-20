@@ -20,3 +20,21 @@
   width:400px;
    height:450px;
 }
+.navbarDropdown{
+  padding-right:100px;
+}
+#logo{
+  padding-left:40px;
+}
+#warna{
+  background-color:#BD0707;
+}
+
+#pading{
+  width:85px;
+  margin-right:10px;
+}
+.shopCart{
+  width:30px;
+   height:30px
+}

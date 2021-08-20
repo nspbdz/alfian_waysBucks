@@ -51,8 +51,7 @@ function AddTopingForm() {
 
    
   }
-  let JsonString=JSON.stringify(dataProduct);
-
+    let JsonString=JSON.stringify(dataProduct);
     localStorage.setItem("data", JsonString)
 
   console.log(dataProduct)

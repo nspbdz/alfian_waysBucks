@@ -1,21 +1,17 @@
 import { useState, useContext, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import {Row,Col,Badge, Button,  FormControl,  InputGroup,  Form,  Navbar,  Nav,} from "react-bootstrap";
-
 import shopcart from "../assets/images/shopcart.svg";
-
 import { UserContext } from "../contexts/userContext";
 import { CartContext } from "../contexts/cartContext";
-
 import ModalSignin from "./ModalSignin";
 import ModalSignup from "./ModalSignup";
 import Icon from "../assets/images/brand-icon.svg";
 import UserDropdown from "./UserDropdown"
 import AdminDropdown from "./AdminDropdown"
-
 import data from "../data/fakeData";
-
 import "../styles/customStyle.css";
+
 const Header = () => {
   // const [showSignin, setshowSignin] = useState(false);
   const [showSignup, setshowSignup] = useState(false);
@@ -64,13 +60,12 @@ const Header = () => {
     
     <Navbar expand="lg">
     
-    <Link to="/" className="navbar-brand">
+    <Link to="/" className="navbar-brand" id="logo">
       <img src={Icon} alt="brand" />
     </Link>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto">
-        
       </Nav>
     
       {state.isLogin==true && state.user.id==1 &&(
@@ -78,7 +73,7 @@ const Header = () => {
         <>
 
          <Row>
-           <Col sm="2" style={{paddingRight:"100px"}}>
+           <Col sm="2" className="navbarDropdown">
          <AdminDropdown />
            </Col>
            <Col sm="5"></Col>
@@ -93,35 +88,35 @@ const Header = () => {
 
         <>  
           <Row>
-           <Col sm="2" style={{paddingRight:"100px"}}>
+           <Col sm="2" className="navbarDropdown">
          
           <Link to="/cart" >  
           <Badge style={{marginRight:"10px"}} className="bg-secondary text-white">   {cartState.carts.length}</Badge>
-          <img  src={shopcart} style={{width:"30px", height:"30px"}} /> {' '}
+          <img  src={shopcart} className="shopCart" /> {' '}
           {/* <img src={shopcart} style={{width:"30px", height:"30px"}} /> {' '}{cartState.carts.length} */}
 
           </Link>
           </Col>
-          <Col sm="2">
+          <Col className="navbarDropdown" sm="2">
            <UserDropdown />
            </Col>
            <Col sm="3"></Col>
            <Col sm="5"></Col>
 
          </Row>
-        {/* <p>user</p> */}
-          {/* <p className="nav-link">{state.user.fullname}</p>  */}
           
        
         </>
         )}
      {!state.isLogin && ( 
         <>
-          <Button className="mr-3 my-2" onClick={() => setshowSignup(true)} variant="light">
-            Register
-          </Button>
-          <Button className="my-2" onClick={() => setshow(true)} style={{backgroundColor:"#BD0707"}}>
+          <div id="pading">
+          <Button className="my-2" onClick={() => setshow(true)}  variant="light">
             Login
+          </Button>
+          </div>
+          <Button id="warna" className="mr-3 my-2" onClick={() => setshowSignup(true)}   >
+             Register
           </Button>
       
       <ModalSignin show={show} handleClose={() => setshow(false)} handleLogin={dispatch}/>

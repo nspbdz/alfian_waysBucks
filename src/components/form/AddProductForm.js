@@ -12,11 +12,9 @@ function AddProductForm() {
     product:data.user.products
   })
 
-// console.log(JSON.stringify(dataProduct.product))
   const handleChange = (e) => {
     const a=e.target.value
-    // console.log(formData)
-    // setFormData(event.target.value)
+
     setDataUpdate({
       ...dataUpdate,
       [e.target.name]:
