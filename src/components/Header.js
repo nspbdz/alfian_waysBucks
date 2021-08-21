@@ -18,10 +18,10 @@ const Header = () => {
  
   const {state, dispatch} = useContext(UserContext);
   const {state: cartState} = useContext(CartContext);
-  console.log("user context state", state)
-  console.log("user id ", state.user.id)
+  // console.log("user context state", state)
+  // console.log("user id ", state.user.id)
   
-  console.log("cart context state", cartState)
+  // console.log("cart context state", cartState)
   const [search, setSearch] = useState("");
   const [show, setshow] = useState(false);
 

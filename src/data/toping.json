@@ -17,13 +17,13 @@
       {
         "id":3,
         "name": "Coconut",
-        "price": 40000,
+        "price": 4000,
         "image": "https://chatimetexas.com/wp-content/uploads/product/Coconut%20Jelly.jpg"
       },
       {
         "id":4,
-        "name": "Boba Manggo",
-        "price": 40000,
+        "name": "BobaManggo",
+        "price": 5000,
         "image": "https://chatimetexas.com/wp-content/uploads/product/Coconut%20Jelly.jpg"
 
       }

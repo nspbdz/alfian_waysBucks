@@ -11,7 +11,6 @@ import  "../styles/customStyle.css"
 // import dataFake from "../data/topinga.json"; 
 
 const Home = () => {
-  const WAIT_TIME = 3000; // waktu re render
 
   const {state, dispatch} = useContext(UserContext);
   const [dataState,setDataState]= useState([])
@@ -23,18 +22,10 @@ const ParseJson=JSON.parse(getLocalStorage)
   }
   console.log(dataState)
 
-// useEffect(() => { 
-//   parseData()
-//     // const ParseJson=JSON.parse(getLocalStorage)  
 
-// }, []); 
-
-useEffect(() => { //re render every WAIT_TIME
-  const id = setInterval(() => {
+useEffect(() => { 
   parseData()
-  }, WAIT_TIME);
-  return () => clearInterval(id);
-}, []); 
+}, [dataState]); 
   return (
     <>
       <Container  >
