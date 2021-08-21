@@ -17,11 +17,11 @@ const ModalSignin = (props) => {
       [e.target.name]: e.target.value,
     });
   };
-console.log(data)
+// console.log(data)
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(data)
-    console.log(userData)
+    // console.log(data)
+    // console.log(userData)
 
   };
   return (

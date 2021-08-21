@@ -8,110 +8,31 @@ import { CartContext } from "../contexts/cartContext";
 import  "../styles/customStyle.css"
 
 const DetailProduct = ({ match }) => {
-
   const [topingPrice,setTopingPrice]= useState([])
-
+  const [getTopping, setGetTopping] = useState('');
   const data=dataProduct.user.products;
   const [dataToping,setDataToping]= useState([])
   const getLocalStorage=localStorage.getItem("dataToping")
-  const ParseJsonToping=JSON.parse(getLocalStorage)  
-  // console.log(ParseJsonToping)
+  const DataTopings=JSON.parse(getLocalStorage)  
+  const [getPrice, setGetPrice] = useState(null);
+  const [getPrices, setGetPrices] = useState([]);
+  var productPriceData = [];
+
+ 
   const {state, dispatch} = useContext(CartContext);
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(true);
   const params = useParams();
   const [topings,setTopings] = useState([])
-  const [temp,setTemp] = useState({
-    name:"",
-    price:""
-  })
-  const [topingsPrice,setTopingsPrice] = useState([])
+ 
   
-  const handleCheckboxChange = async (e)  => {
-    
-    console.log(e.target.name)
-    console.log(e.target.value)
-    let newArray =   [...topings, e.target.name];
-    if (topings.includes(e.target.name) )
-     {
-      newArray = newArray.filter(day => day !== e.target.name);
-    }
-     setTopings( newArray );
-     console.log(newArray)
-
-     const x= ParseJsonToping.filter(items => items.name ==e.target.name ).map(dataMatch => (
-      console.log(dataMatch)
-          
-        ))
-
-
-    //  setTemp({
-    //   ...temp,
-    //   name:e.target.name,
-    //   price:e.target.value,
-    //   })
-    //   if (topingsPrice.includes(e.target.name) )
-    //  {
-    //   temp = temp.filter(temporer => temporer.name !== e.target.name);
-    // }
-    // setTemp(temp)
-    // console.log(temp)
-
-
-
-
-    
-     
-      }
-
-       console.log(topingsPrice)
-       console.log(temp)
-
-
-
-    const checkUser =  () => {
-      // console.log(topings)
-      const stringIdToping=topings.toString()
-      // console.log(stringIdToping)
-      const a =ParseJsonToping.filter(items => items.name ==topings)
-      // console.log(a)
-
-  //     let newArrays =   [...topings, a];
-  //     if (topings.includes(a) )
-  //      {
-  //       newArrays = newArrays.filter(day => day !== a);
-  //     }
-  //      setTopingsPrice( newArrays );
-  // console.log(topingPrice)
-    // };
-      
-      
-      
-      // const  array1 = ParseJsonToping.filter(function(item) {
-      //     return !topings.includes(item); 
-      //   });
-      //   console.log(array1);
-    //  const   str = /.(.+)/.exec(stringIdToping);
-    //  console.log(str)
-        //   if  (topings <=1){
-      // {ParseJsonToping.filter(item => item.name ==stringIdToping).map(dataMatch => (
-    }
-
-useEffect(() => {
-  checkUser();
-}, [topings]);
-
-
-
-  const parseData = () => {
-    setDataToping(ParseJsonToping)
+   const parseData = () => {
+    setDataToping(DataTopings)
   }
-  // console.log(dataToping)
 
-useEffect(() => { 
+  useEffect(() => { 
   parseData()
 }, []); 
-// console.log(dataToping)
 
   const addProduct = (item) => {
     dispatch({
@@ -119,9 +40,8 @@ useEffect(() => {
       data: item
     }) 
   }
-  // execute after rendering jsx
   useEffect(() => {
-    console.log("mounting component at:\n", new Date().toLocaleTimeString());
+ 
     setTimeout(() => {
       const itemMatchId = data.find((item) => item.id === parseInt(params.id));
       if (!itemMatchId) {
@@ -138,17 +58,36 @@ useEffect(() => {
         data: itemMatchId,
       });
       setLoading(false);
-    }, 5000);
+    }, 3000);
 
     return () => {
       setItem(null)
       setLoading(true);
     }
   }, []);
-  // console.log(item)
 
- 
-
+    const findTopping =(e) =>{
+    const topingId=parseInt(e.target.value)
+    let newArray =   [...topings,topingId ];
+    if (topings.includes(topingId))
+    {
+      newArray = newArray.filter(day => day !== topingId );
+    }
+    // var price=item.data.price;
+    var price=0;
+        for(var i=0; i<=newArray.length; i++ ) 
+        {
+          const findData= DataTopings.find(data => data.id === i )
+          if (findData !== undefined) {
+         price +=findData.price
+          }
+        }
+        setGetPrice(price)
+    console.log(newArray)
+    console.log(price)
+     setTopings( newArray );
+    console.log("DataTopings",DataTopings)
+  } 
   return (
     <>
       {loading && <p>loading....</p>}
@@ -168,12 +107,12 @@ useEffect(() => {
             <Col>
                  <p className="h1 font-weight-bold">{item.data.name}</p>
                  <p> Rp. {item.data.price}</p>
-                       {dataToping.map((item, index) => ( 
+                      {dataToping.map((item, index) => ( 
                         <div id="topingDiv" >
                             <>
                             <input name={item.name} value={item.id} type="checkbox" id={` "myCheckbox ${item.id} " `} 
                             className="check"
-                            onChange={handleCheckboxChange}
+                            onChange={findTopping}
                             />
                             <label for={` "myCheckbox ${item.id} " `} >
                             <img  src={item.image} id="topingStyle" />
@@ -181,7 +120,7 @@ useEffect(() => {
                             </>
                         </div>
                        ))}
-                       <p> Rp. {item.data.price}</p>
+                       <p> Rp. {item.data.price + getPrice}</p>
 
               
             </Col>

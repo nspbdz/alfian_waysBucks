@@ -22,7 +22,7 @@ const App = () => {
   localStorage.setItem("data", JsonString)
 
   const dataTopings=dataToping.user.toping
-  // console.log(dataTopings)
+  console.log(dataTopings)
   let toping=JSON.stringify(dataTopings);
   localStorage.setItem("dataToping", toping)
   return (
