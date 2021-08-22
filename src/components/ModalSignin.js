@@ -34,7 +34,7 @@ const ModalSignin = (props) => {
     })
   };
   return (
-    <Modal show={show} onHide={handleClose} centered>
+    <Modal show={show} onHide={handleClose} centered className="my-modal">
       <Modal.Body>
   
         <Form onSubmit={handleSubmit} style={{paddingLeft:"33px",paddingRight:"33px",}}>

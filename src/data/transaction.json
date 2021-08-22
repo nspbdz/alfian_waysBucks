@@ -2,7 +2,10 @@
   "user": {
     "role": "user",
     "name":"user",
+    "status":"On The Way",
     "email":"user@gmail.com",
+
+    "subTotal":74000,
     "image":"http://thispix.com/wp-content/uploads/2015/06/portrait-profile-027.jpg",
     "products": [
       {

@@ -19,7 +19,7 @@ const ProfileList = ({ data, loading,  }) => {
     <Col xs={8}>
           <div>
             <h4 style={{paddingTop:"70px"}}>My Profile</h4>
-            {item.image? <img src={item.image} style={{width:"150px", height:"120px"}} /> :null}
+            {item.image? <img src={item.image} style={{width:"180px", height:"220px"}} /> :null}
     {/* <img  width="300" height="280" src="https://s1.ibtimes.com/sites/www.ibtimes.com/files/styles/full/public/2020/06/17/mark-zuckerberg-has-been-strongly-criticized-for-facebooks.jpg" />  */}
 
     </div>

@@ -131,3 +131,15 @@ width:15px;
   margin-right:50px;
 
 }
+#MyTransactionText{
+  font-size:10px;
+  margin-bottom:1px;
+}
+#Mytoping{
+  font-size:10px;
+  display: inline-block;
+
+}
+.modal-backdrop {
+  background-color: #BD0707;
+}

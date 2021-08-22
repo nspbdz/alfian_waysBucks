@@ -14,6 +14,8 @@ console.log(dataTransaction)
                <>
      <div>
      <Row >
+    <Col sm="1"></Col>
+
     <Col >
       <>
         <ProfileList data={dataTransaction} />
@@ -42,13 +44,15 @@ console.log(dataTransaction)
         
     </Col>
     <Col xs={1}></Col>
-  <Col xs={6}  >
+  <Col xs={5}  >
     <>
     <h4 style={{paddingTop:"70px"}}>My Transaction</h4>
 
    <OrderList data={dataTransaction}   />
    </>
     </Col>
+
+    <Col sm="1"></Col>
 
      </Row>
   </div>

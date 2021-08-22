@@ -7,7 +7,7 @@ const ModalProduct = (props) => {
 
  
   return (
-    <Modal show={show} onHide={handleClose} centered>
+  <Modal className="my-modal" show={show} onHide={handleClose} centered>
       <Modal.Body>
   
        <p>Thank you for ordering in us, please wait to verify you order</p>
