@@ -1,8 +1,14 @@
 import { Card,Jumbotron,Row,Col,Button,Form } from "react-bootstrap";
-
-import React from 'react'
+import { useState, useContext, useEffect } from "react";
+import { UserContext } from "../contexts/userContext";
+import ProfileList from "../components/ProfileList";
+import OrderList from "../components/OrderList";
+import dataTransaction from "../data/transaction.json"
 
 function Profile() {
+  const {state, dispatch} = useContext(UserContext);
+console.log(state.user)
+console.log(dataTransaction)
     return (
         <div>
                <>
@@ -10,7 +16,7 @@ function Profile() {
      <Row >
     <Col >
       <>
-        {/* <ProfileList data={dataProfile} /> */}
+        <ProfileList data={dataTransaction} />
       <div style={{marginTop:"10px"}}>
         
      <Form
@@ -40,7 +46,7 @@ function Profile() {
     <>
     <h4 style={{paddingTop:"70px"}}>My Transaction</h4>
 
-   {/* <OrderList data={dataTransaction} loading={loading}  /> */}
+   <OrderList data={dataTransaction}   />
    </>
     </Col>
 
