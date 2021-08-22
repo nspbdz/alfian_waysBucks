@@ -1,11 +1,12 @@
 import { useParams, useLocation } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col,Button } from "react-bootstrap";
 import dataProduct from "../data/product";
 import NotFound from "./NotFound";
 import CardList from "../components/CardList";
 import { CartContext } from "../contexts/cartContext";
 import  "../styles/customStyle.css"
+
 
 const DetailProduct = ({ match }) => {
   const [topingPrice,setTopingPrice]= useState([])
@@ -15,15 +16,13 @@ const DetailProduct = ({ match }) => {
   const getLocalStorage=localStorage.getItem("dataToping")
   const DataTopings=JSON.parse(getLocalStorage)  
   const [getPrice, setGetPrice] = useState(null);
-  const [getPrices, setGetPrices] = useState([]);
-  var productPriceData = [];
-
- 
   const {state, dispatch} = useContext(CartContext);
   const [item, setItem] = useState(null);
+  const [ProductItem, setProductItem] = useState([]);
   const [loading, setLoading] = useState(true);
   const params = useParams();
   const [topings,setTopings] = useState([])
+  const [qty,setQty] = useState(1)
  
   
    const parseData = () => {
@@ -34,12 +33,7 @@ const DetailProduct = ({ match }) => {
   parseData()
 }, []); 
 
-  const addProduct = (item) => {
-    dispatch({
-      type: "ADD_PRODUCT",
-      data: item
-    }) 
-  }
+  
   useEffect(() => {
  
     setTimeout(() => {
@@ -58,7 +52,7 @@ const DetailProduct = ({ match }) => {
         data: itemMatchId,
       });
       setLoading(false);
-    }, 3000);
+    }, 5000);
 
     return () => {
       setItem(null)
@@ -88,6 +82,36 @@ const DetailProduct = ({ match }) => {
      setTopings( newArray );
     console.log("DataTopings",DataTopings)
   } 
+
+  const addQty = () => {
+    setQty(qty + 1);
+    // setProductItem({
+    //   ...ProductItem,
+    //   // item,
+    //   pricess:qty * item.data.price
+    // })
+    
+  };
+  const removeQty = () => {
+    if(qty === 1){
+      return;  
+    }
+    setQty(qty - 1);
+    // setProductItem({
+    //   ...ProductItem,
+    //   pricess:qty * item.data.price
+    // })
+  };
+
+  const addProduct = (item) => {
+    // setProductItem(ProductItem+getPrice)
+    dispatch({
+      type: "ADD_PRODUCT",
+      data:item,
+    }) 
+  }
+  console.log(ProductItem)
+
   return (
     <>
       {loading && <p>loading....</p>}
@@ -120,7 +144,35 @@ const DetailProduct = ({ match }) => {
                             </>
                         </div>
                        ))}
-                       <p> Rp. {item.data.price + getPrice}</p>
+                       <Row>
+                         <Col sm="4">
+                           <>
+                                <Row>
+                                <Col md="2" >
+                                <p onClick={removeQty}  style={{fontSize:"16px"}}>-</p>
+                                </Col>
+                                <Col md="2" >       
+                                  <span >{qty}</span>
+                              </Col>
+                                <Col md="2" > 
+                                <p onClick={addQty} style={{fontSize:"16px"}}>+</p>
+                                </Col>
+                              </Row>
+                           <h5>Total</h5>
+                           </>
+
+                         </Col>
+                         <Col sm="4"></Col>
+                         <Col sm="4">
+                       <p> Rp. { qty * item.data.price + getPrice }</p>
+
+                         </Col>
+                       </Row>
+                <Button  style={{width:"544px",height:"40px",alignItems:"center",backgroundColor:"#613D2B"}}variant="warning" data={data}
+                 onClick={() => addProduct(item.data)}
+                 >
+                  <p style={{color:"white"}}>Add to Cart</p>
+                </Button>
 
               
             </Col>

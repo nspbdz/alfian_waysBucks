@@ -25,7 +25,9 @@ const ParseJson=JSON.parse(getLocalStorage)
 
 useEffect(() => { 
   parseData()
-}, [dataState]); 
+}, []); 
+
+
   return (
     <>
       <Container  >
@@ -52,8 +54,7 @@ useEffect(() => {
       <Container style={{display:'flex'}} >
         <Row >
            {state.isLogin==true && state.user.id==2 &&(
-            // <Col md="auto" >
-            <Col xs="2" >
+            <Col md="auto" >
               <img src={Jumbotron} />
               <p>Let’s Order</p>
               <CardList data={dataState}/>
