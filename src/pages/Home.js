@@ -37,7 +37,7 @@ useEffect(() => {
           <h3 className="title">Income Transaction</h3>
         <Row className="justify-content-md-center" >
           <>
-
+          
           <Col sm="1"></Col>
           <Col sm="10"  >
             <TransactionList  data={TransactionData}/>

@@ -40,10 +40,10 @@ function UserDropdown(){
     return (
         <> 
 <div>
- <Dropdown>
+
+ <Dropdown   align="start">
   <Dropdown.Toggle style={{backgroundColor:"transparent",border:'none'}} id="dropdown-basic" >
     <Image style={{width:"50px"}} src="https://ujhw03sswsepgw3234x0qm51-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/171025-202659-Donnely-Christopher-400x400x72.jpg" roundedCircle />
-
   </Dropdown.Toggle>
 
   <Dropdown.Menu style={{width:"220px"}}>

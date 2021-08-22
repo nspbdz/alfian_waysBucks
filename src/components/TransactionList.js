@@ -14,7 +14,6 @@ const TransactionList = ({ data, isLoading, error,isLoadingFilter, errors }) => 
 <>
 {/* <h3>Income Transaction</h3> */}
 {/* <br></br> */}
-    
     <Table  striped bordered hover style={{width:"900px"}} >
 <thead style={{backgroundColor:"#E5E5E5"}}>
   <tr>

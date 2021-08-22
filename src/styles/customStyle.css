@@ -94,7 +94,7 @@ label:before {
   transform: scale(0);
 }
 
-label img {
+.topingstyle {
   height: 100px;
   width: 100px;
   transition-duration: 0.2s;
@@ -117,10 +117,17 @@ label img {
   /* box-shadow: 0 0 5px #333; */
   z-index: -1;
 }
-#CartRowStyle{
-  /* padding-left: 40px; */
-  margin-left: 40px;
+
+#cartWrap{
+  margin-right:10px;
+
 }
-hr{
-  border-radius: 2px;
+
+#badgeCart{
+right:10px;
+width:15px;
+}
+#userDropd{
+  margin-right:50px;
+
 }

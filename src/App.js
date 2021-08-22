@@ -6,6 +6,7 @@ import { useState, useContext, useEffect } from "react";
 import PrivateRoute from "./components/route/PrivateRoute";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
+import Profile from "./pages/Profile";
 import AddToping from "./pages/AddToping";
 import AddProduct from "./pages/AddProduct";
 import Header from "./components/Header";
@@ -40,6 +41,7 @@ const App = () => {
                 <Route exact path="/" component={Home} />
                 <PrivateRoute  exact path="/product/:id" component={DetailProduct} />
                 <PrivateRoute exact path="/addproduct" component={AddProduct} />
+                <PrivateRoute exact path="/profile" component={Profile} />
                 <PrivateRoute exact path="/cart" component={Cart} />
                 <PrivateRoute exact path="/addtoping" component={AddToping} />
                 <Route exact path="/signup" component={Signup} />

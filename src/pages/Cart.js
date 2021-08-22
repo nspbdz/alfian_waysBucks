@@ -5,8 +5,8 @@ import {Button, Card, Col, Row,Form} from 'react-bootstrap';
 import { BsTrash } from "react-icons/bs";
 import fakeCartToping from "../data/topingCart.json"
 import fakeCartProduct from "../data/productCart.json"
-import "../styles/customStyle.css";
-
+import "../styles/cartStyle.css";
+import imgFilebtn from "../assets/images/imgFilebtn.svg"
 function Cart() {
   const [dataState,setDataState]= useState([])
   const {state, dispatch} = useContext(CartContext);
@@ -112,14 +112,19 @@ function Cart() {
 
             </Col>
             <Col sm="4">
-              
+           
               </Col>
           </Row>
          <hr></hr>
          <p>Sub Total</p>
           
             </Col>
-            <Col sm="6"></Col>
+            <Col sm="6">
+          <label for="file-upload"  class="custom-file-upload">
+          <img  src={imgFilebtn} /> 
+          </label>
+          <input id="file-upload" type="file"  />
+            </Col>
           </Row>
         </Col>
         <Col sm="1">

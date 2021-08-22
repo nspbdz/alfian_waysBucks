@@ -32,11 +32,13 @@ function CardItem({ item, isProduct, handleClick }) {
    <>
     <Row>
               <Col  key={item.id} id={item.id} >
+
                 <Card  onClick={() => handlePushToDetail(item.id)} data-div_id={item.id} id={item.id}  style={{ width: "15rem", marginBottom: "10px" }}>
                     <Card.Img  variant="top" src={item.image} width={241} height={321} style={{ objectFit: "cover" }}   />
                     <Card.Body style={{backgroundColor:"#F6E6DA"}}>
                     <Card.Title>  {item.name} </Card.Title>
                     <Card.Title>Rp. {item.price} </Card.Title>
+                    
                   </Card.Body>
                <ModalSignin show={show} handleClose={() => setshow(false)} handleLogin={dispatch}/>
 

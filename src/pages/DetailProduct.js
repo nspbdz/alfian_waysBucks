@@ -139,7 +139,7 @@ const DetailProduct = ({ match }) => {
                             onChange={findTopping}
                             />
                             <label for={` "myCheckbox ${item.id} " `} >
-                            <img  src={item.image} id="topingStyle" />
+                            <img  src={item.image} id="topingStyle" class="topingstyle" />
                               </label>
                             </>
                         </div>

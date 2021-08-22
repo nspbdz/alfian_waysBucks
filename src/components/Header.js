@@ -87,23 +87,16 @@ const Header = () => {
        {state.isLogin==true && state.user.id==2 &&(
 
         <>  
-          <Row>
-           <Col sm="2" className="navbarDropdown">
-         
-          <Link to="/cart" >  
-          <Badge style={{marginRight:"10px"}} className="bg-secondary text-white">   {cartState.carts.length}</Badge>
-          <img  src={shopcart} className="shopCart" /> {' '}
-          {/* <img src={shopcart} style={{width:"30px", height:"30px"}} /> {' '}{cartState.carts.length} */}
 
+         <div id="cartWrap">
+         <Link to="/cart" >  
+          <img   src={shopcart}  className="shopCart" /> {' '}
+          <Badge  id="badgeCart" className="bg-danger text-white">   {cartState.carts.length}</Badge>
           </Link>
-          </Col>
-          <Col className="navbarDropdown" sm="2">
+         </div>
+         <div id="userDropd">
            <UserDropdown />
-           </Col>
-           <Col sm="3"></Col>
-           <Col sm="5"></Col>
-
-         </Row>
+         </div>
           
        
         </>
