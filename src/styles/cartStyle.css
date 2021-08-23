@@ -20,3 +20,14 @@ input[type="file"] {
   display: inline-block;
 
 }
+hr {
+  border: none;
+  background-color: #974A4A;
+  height: 1px;
+}
+
+#payBtn{
+
+  background-color:#BD0707;
+  width:414px;
+}

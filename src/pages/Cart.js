@@ -15,9 +15,14 @@ console.log(getLocalStorage)
 const ParseJson=JSON.parse(getLocalStorage)  
 console.log(ParseJson.cart)
 const dataCarts=ParseJson.cart
+
+
   const [dataState,setDataState]= useState([])
   const {state, dispatch} = useContext(CartContext);
-
+  const [dataUpdate, setDataUpdate] = useState([])
+  const [dataTransaction, setDataTransaction] = useState({
+    transaction:dataCarts
+  })
   const fakeProduct=fakeCartProduct.user.products
   console.log(fakeProduct)
   const parseData = () => {
@@ -39,11 +44,12 @@ const dataCarts=ParseJson.cart
   });
   
   const handleChange = (e) => {
-    setData({
-      ...data,
+
+    setDataUpdate({
+      ...dataUpdate,
       [e.target.name]:
         e.target.type === "file" ? e.target.files[0] : e.target.value,
-    });
+      });
   };
 
   const handleClick = (item, type) => {
@@ -58,8 +64,37 @@ const dataCarts=ParseJson.cart
   {dataCarts.map((item) => (
     console.log(item.qty)
   ))}
+  
+  const handleOnSubmit = (e) => {
 
- 
+    setDataTransaction((prevDataProduct=> ({
+      ...prevDataProduct,
+      "role": "user",
+    "name":"user",
+    "status":"On The Way",
+    "email":"user@gmail.com",
+    "address": "jakarta",
+    "postCode": 123321,
+    "income":"25.000",
+    "subTotal":74000,
+    "image":"http://thispix.com/wp-content/uploads/2015/06/portrait-profile-027.jpg",
+      transaction: [...prevDataProduct.transaction, {
+        // item,
+        qty: "qty" ,
+        total: "a",
+        toping: [ {
+          // TopingName
+          name:"asd"
+          
+        }]
+      }]
+  })  ))
+    
+
+}
+const JsonString=JSON.stringify(dataTransaction);
+localStorage.setItem("fakeTransaction", JsonString)
+console.log(dataTransaction)
   return (
     <div>
       {/* {state.carts.length < 1 && (<p className="h1">Your cart is empty</p>)}
@@ -152,7 +187,7 @@ const dataCarts=ParseJson.cart
           </Row>
 
             </Col>
-            <Col sm="6">
+            <Col sm="4">
           <label for="file-upload"  class="custom-file-upload">
           <img  src={imgFilebtn} /> 
           </label>
@@ -172,7 +207,7 @@ const dataCarts=ParseJson.cart
   <Form.Control
     name="name"
     type="text"
-    value={data.name}
+
     required
     placeholder="Name"
     onChange={handleChange}
@@ -182,7 +217,6 @@ const dataCarts=ParseJson.cart
   <Form.Control
     name="email"
     type="text"
-    value={data.email}
     required
     placeholder="email "
     onChange={handleChange}
@@ -192,7 +226,6 @@ const dataCarts=ParseJson.cart
   <Form.Control
     name="phone"
     type="number"
-    value={data.phone}
     required
     placeholder=" Phone"
     onChange={handleChange}
@@ -202,7 +235,6 @@ const dataCarts=ParseJson.cart
   <Form.Control
     name="postCode"
     type="number"
-    value={data.postCode}
     required
     placeholder="postCode"
     onChange={handleChange}
@@ -214,19 +246,21 @@ const dataCarts=ParseJson.cart
     type="text"
     placeholder="address"
     required
-    value={data.address}
     onChange={handleChange}
   />
 </Form.Group>
-<Form.Group>
+<Form.Group className="mb-3" controlId="image">
+         <Form.Control type="text" placeholder="image" name="image" value={dataUpdate.image} onChange={handleChange} />
+       </Form.Group>
+{/* <Form.Group>
   <Form.Control
     name="imageFile"
     type="file"
     onChange={handleChange}
     required
   />
-</Form.Group>
-<Button style={{backgroundColor:"#613D2B",width:"300px"}} type="submit">pay</Button>
+</Form.Group> */}
+<Button onClick={handleOnSubmit} id="payBtn" >pay</Button>
 
 </Form>
 

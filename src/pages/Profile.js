@@ -34,7 +34,7 @@ console.log(dataTransaction)
         </Form.Group>
         
         <Button type="submit" style={{width:"213px",height:"50px",backgroundColor:"#613D2B"}} >
-          choose your photo
+          update profile
         </Button>
     
         

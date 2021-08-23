@@ -169,3 +169,11 @@ width:15px;
   margin-left: 60px;
   /* margin-top: 10px; */
 }
+#payBtn{
+
+  background-color:#BD0707;
+  width:544px;
+  height: 40px;
+  align-items: center;
+  
+}

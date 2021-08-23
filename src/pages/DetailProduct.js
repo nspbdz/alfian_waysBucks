@@ -106,18 +106,18 @@ const DetailProduct = ({ match }) => {
   const addProduct = (item) => {
   console.log("dataTopingsDipilih",topings)
 
-console.log(item)
- var TopingName=[];
- for(var i=0; i<=topings.length; i++ ) 
- {
-   const finTopingName= DataTopings.find(data => data.id === i )
-   if (finTopingName !== undefined) {
-    //  console.log(finTopingName.name)
-  TopingName +=[finTopingName.name + ", "]
-  
-   }
- }
- console.log(TopingName)
+  console.log(item)
+  var TopingName=[];
+  for(var i=0; i<=topings.length; i++ ) 
+  {
+    const finTopingName= DataTopings.find(data => data.id === i )
+    if (finTopingName !== undefined) {
+      //  console.log(finTopingName.name)
+    TopingName +=[finTopingName.name + ", "]
+    
+    }
+  }
+    console.log(TopingName)
     setDataCart((prevDataProduct=> ({
       ...prevDataProduct,
       cart: [...prevDataProduct.cart, {
@@ -207,7 +207,7 @@ console.log(item)
 
                          </Col>
                        </Row>
-                <Button  style={{width:"544px",height:"40px",alignItems:"center",backgroundColor:"#613D2B"}}variant="warning" data={data}
+                <Button  id="payBtn" style={{width:"544px"}} data={data}
                  onClick={() => addProduct(item.data)}
                  >
                   <p style={{color:"white"}}>Add to Cart</p>
@@ -215,7 +215,6 @@ console.log(item)
             </Col>
            
           </Row> 
-          <hr />
         </>
       )}
       {(!loading && !item) && (<NotFound />)}
