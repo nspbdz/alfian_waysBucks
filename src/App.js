@@ -17,18 +17,23 @@ import {CartContextProvider} from "./contexts/cartContext"
 import {UserContextProvider,UserContext} from "./contexts/userContext";
 import dataFake from "./data/product.json"; 
 import dataToping from "./data/toping.json"; 
+import dataTransactions from "./data/transactions.json"
 
 const App = () => {
 
-  const fakeData=dataFake.user.products
-  let JsonString=JSON.stringify(fakeData);
-  localStorage.setItem("data", JsonString)
+  const fakeData=dataFake.user
+  let product=JSON.stringify(fakeData);
+  localStorage.setItem("data", product)
 
-  const dataTopings=dataToping.user.toping
-  console.log(dataTopings)
+  const dataTopings=dataToping.user
   let toping=JSON.stringify(dataTopings);
   localStorage.setItem("dataToping", toping)
 
+  console.log(dataTransactions)
+  const fakeDataTransaction=dataTransactions.data.transaction
+let JsonStrings=JSON.stringify(fakeDataTransaction);
+localStorage.setItem("dataTransaction", JsonStrings)
+console.log(fakeDataTransaction)
   console.log()
   return (
     <div className="App">

@@ -23,7 +23,7 @@ console.log(transactions)
       )}
       
        {transactions?.length > 0 &&(
-      <Row style={{backgroundColor:"#F6E6DA"}}>
+      <Row style={{backgroundColor:"#F6DADA"}}>
           <Col sm="7" >
 
           {transactions?.map((item, index) => (

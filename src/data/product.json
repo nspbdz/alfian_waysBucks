@@ -1,12 +1,12 @@
 {
   "user": {
-    "role": "admin",
-    "products": [
+
+    "product": [
       {
         "id":1,
         "name": "Ice  Strawberry Milk",
         "price": 30000,
-        "image": "https://cdn.totallythebomb.com/wp-content/uploads/2020/06/IMG_1110.jpg"
+        "image": "https://www.theimpulsivebuy.com/wordpress/wp-content/uploads/2018/06/Starbucks-Serious-Strawberry-Frappuccino-1.jpg"
       },
       {
         "id":2,

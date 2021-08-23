@@ -1,13 +1,66 @@
 
 import { Button, Col, Row,Table } from "react-bootstrap";
-import { useState } from "react";
 // import TransactionItem from "./TransactionItem";
 import { BiCheckCircle } from "react-icons/bi";
 import { ImCross } from "react-icons/im";
 import { BsSearch } from "react-icons/bs";
 import not_found from "../assets/images/not_found.svg";
+import { useState, useContext, useEffect } from "react";
+import dataTransactions from "../data/transaction.json"
 import  "../styles/customStyle.css"
-const TransactionList = ({ data, isLoading, error,isLoadingFilter, errors }) => {
+const TransactionList = ({  isLoading, error,isLoadingFilter, errors }) => {
+const [data,setData]= useState([])
+const WAIT_TIME = 3000; // waktu re render
+
+// console.log(dataTransactions)
+// const fakeDataTransaction=dataTransactions.user
+// let JsonString=JSON.stringify(fakeDataTransaction);
+// localStorage.setItem("dataTransaction", JsonString)
+// console.log(fakeDataTransaction)
+
+const getLocalStorage=localStorage.getItem("dataTransaction")
+
+const ParseJson=JSON.parse(getLocalStorage)  
+console.log(getLocalStorage)
+console.log(ParseJson)
+  const parseData = () => {
+    setData(ParseJson)
+  }
+  console.log(setData)
+
+
+useEffect(() => { 
+  parseData()
+}, []); 
+// useEffect(() => { //re render every WAIT_TIME
+//   const id = setInterval(() => {
+//     parseData()
+  
+//   }, WAIT_TIME);
+//   return () => clearInterval(id);
+// }, []); 
+// console.log(data)
+// console.log(ParseJson)
+
+
+//   const [dataProduct, setDataProduct] = useState({
+//     product:data.products
+//   })
+//   const handleApprove = (e) => {
+  
+//   setDataProduct((prevDataProduct=> ({
+//     ...prevDataProduct,
+//     product: [...prevDataProduct.product, {
+//       id:1,
+//       status: "Approve",
+    
+//     }]
+
+// })
+//   ))
+// // setshow(true)
+  
+// }
 
   return(
 
@@ -32,12 +85,11 @@ const TransactionList = ({ data, isLoading, error,isLoadingFilter, errors }) => 
     )}
     {data?.length > 0 &&
       data?.map((item, index) => (
-
         <tbody style={{backgroundColor:"#FFFFFF"}} key={index}>
                   
           <tr>
                 <td value={item.id}> {item.id}</td>
-                <td>{item.fullname}</td>
+                <td>{item.name}</td>
                 <td>{item.address}</td>
                 <td>{item.postCode}</td>
                 {/* <td> kopi {item.order.name}</td> */}

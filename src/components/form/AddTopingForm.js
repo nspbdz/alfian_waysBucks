@@ -2,23 +2,27 @@ import { useState,useContext,useEffect } from "react";
 import {Row,Col, Form, Button,InputGroup,FormControl } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
 import { useHistory,Router,Link } from "react-router-dom";
-import data from "../../data/product.json"; 
+import data from "../../data/toping.json"; 
 import topingadd from "../../assets/images/toping/topingadd.svg";
 import "../../styles/customStyle.css";
+import ModalToping from "../ModalToping"
 
 function AddTopingForm() {
-  console.log(data.user.products)
+
+  const [show, setshow] = useState(false);
+
+  console.log(data)
   const [dataUpdate, setDataUpdate] = useState([])
 
+
   const [dataProduct, setDataProduct] = useState({
-    product:data.user.products
+    toping:data.user.toping
+
   })
 
-// console.log(JSON.stringify(dataProduct.product))
+  console.log(dataProduct)
   const handleChange = (e) => {
     const a=e.target.value
-    // console.log(formData)
-    // setFormData(event.target.value)
     setDataUpdate({
       ...dataUpdate,
       [e.target.name]:
@@ -29,32 +33,28 @@ function AddTopingForm() {
 
   console.log(dataUpdate)
   const handleOnSubmit = (e) => {
-    // console.log(dataProduct)
-    
 
     setDataProduct((prevDataProduct=> ({
       ...prevDataProduct,
-      product: [...prevDataProduct.product, {
+      toping: [...prevDataProduct.toping, {
         id:5,
         name: dataUpdate.name,
         price: dataUpdate.price,
         image: dataUpdate.image,
        
-        // name: "boba 2",
-        // price: 2132,
-        // foto: "12312321.jpg"
+      
       }]
-    // })
 
   })
     ))
 
+  setshow(true)
    
   }
     let JsonString=JSON.stringify(dataProduct);
-    localStorage.setItem("data", JsonString)
+    localStorage.setItem("dataToping", JsonString)
 
-  console.log(dataProduct)
+  console.log(dataProduct.product)
 
 
     return (
@@ -94,6 +94,8 @@ function AddTopingForm() {
      
            </div>
          </Col>
+      <ModalToping show={show} handleClose={() => setshow(false)} />
+
          <Col sm="4"></Col>
        </Row>
      

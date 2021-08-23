@@ -4,7 +4,9 @@
     "name":"user",
     "status":"On The Way",
     "email":"user@gmail.com",
-
+    "address": "jakarta",
+    "postCode": 123321,
+    "income":"25.000",
     "subTotal":74000,
     "image":"http://thispix.com/wp-content/uploads/2015/06/portrait-profile-027.jpg",
     "products": [
@@ -58,4 +60,5 @@
     ]
     
   }
+  
 }

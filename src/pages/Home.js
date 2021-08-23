@@ -6,7 +6,7 @@ import Jumbotron from "../../src/assets/images/Jumbotron.svg";
 import { useState, useContext, useEffect } from "react";
 import { UserContext } from "../contexts/userContext";
 import TransactionList from "../components/TransactionList"
-import TransactionData from "../data/Transaction"
+// import TransactionData from "../data/Transaction"
 import  "../styles/customStyle.css"
 // import dataFake from "../data/topinga.json"; 
 
@@ -16,9 +16,12 @@ const Home = () => {
   const [dataState,setDataState]= useState([])
 
 const getLocalStorage=localStorage.getItem("data")
+console.log(getLocalStorage)
 const ParseJson=JSON.parse(getLocalStorage)  
+console.log(ParseJson.product)
+
   const parseData = () => {
-    setDataState(ParseJson)
+    setDataState(ParseJson.product)
   }
   console.log(dataState)
 
@@ -37,10 +40,10 @@ useEffect(() => {
           <h3 className="title">Income Transaction</h3>
         <Row className="justify-content-md-center" >
           <>
-          
+
           <Col sm="1"></Col>
           <Col sm="10"  >
-            <TransactionList  data={TransactionData}/>
+            <TransactionList  />
 
           </Col>
           <Col sm="1"></Col>

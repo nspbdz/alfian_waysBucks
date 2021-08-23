@@ -5,14 +5,14 @@ import { useHistory,Router,Link } from "react-router-dom";
 import data from "../../data/product.json"; 
 import ModalProduct from "../ModalProduct"
 function AddProductForm() {
-  console.log(data.user.products)
+  console.log(data.user.product)
   const [dataUpdate, setDataUpdate] = useState([])
   const [show, setshow] = useState(false);
 
   const [dataProduct, setDataProduct] = useState({
-    product:data.user.products
+    product:data.user.product
   })
-
+console.log(dataProduct)
   const handleChange = (e) => {
     const a=e.target.value
 

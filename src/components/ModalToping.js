@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Modal, Button,Row,Col, Form } from "react-bootstrap";
-const ModalProduct = (props) => {
+const ModalToping = (props) => {
   const { handleClose, show } = props;
 
  
@@ -10,7 +10,7 @@ const ModalProduct = (props) => {
   <Modal className="my-modal" show={show} onHide={handleClose} centered>
       <Modal.Body>
   
-       <p>New Product successfully Added</p>
+       <p>New Topping successfully Added</p>
     
    
       </Modal.Body>
@@ -18,4 +18,4 @@ const ModalProduct = (props) => {
   );
 };
 
-export default ModalProduct;
+export default ModalToping;
