@@ -131,11 +131,14 @@ width:15px;
 
 }
 #MyTransactionText{
-  font-size:10px;
+  font-size:12px;
+  color: #BD0707;
   margin-bottom:1px;
 }
 #Mytoping{
   font-size:10px;
+  font-weight: bold;
+  color: #BD0707;
   display: inline-block;
 
 }
@@ -176,4 +179,109 @@ width:15px;
   height: 40px;
   align-items: center;
   
+}
+#MyTransactionname{
+
+  width: 138px;
+  height: 19px;
+  left: 841px;
+  top: 235px;
+
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+
+  color: #BD0707;
+
+}
+
+#profilestatus{
+   display:block;
+    margin-left: auto;
+    margin-right:auto;
+    width:150px;
+    height:15px;
+    background-color:transparent;
+    border: none;
+    
+    /* background-color:linear-gradient(to left, #00D1FF 100%, #00D1FF 100%) */
+}
+#statustext{
+  width: 112px;
+height: 19px;
+left: 1116px;
+/* top: 388px; */
+  /* padding-top: 5px; */
+  color: #00D1FF;
+  font-size: 12px;
+}
+#subtotaltext{
+  padding-top: 5px;
+
+  font: Avenir ;  
+  font-weight: 900;
+  line-height: 13.66px;
+  color: #974A4A;
+  font-size: 12px;
+}
+
+
+#qr{
+  width: 90px;
+height: 90px;
+/* left: 1136px; */
+top: 304px;
+margin-left: auto;
+margin-right:auto;
+display: block;
+margin-bottom:10px;
+margin-top:12px;
+}
+#iconprofile{
+width: 90px;
+height: 90px;
+/* left: 1136px; */
+top: 304px;
+margin-left: auto;
+margin-right:auto;
+display: block;
+margin-bottom:10px;
+margin-top:12px;
+}
+
+#date{
+  width: 96px;
+height: 12px;
+left: 841px;
+top: 257px;
+
+font-family: Avenir;
+font-style: normal;
+font-weight: 900;
+font-size: 9px;
+line-height: 12px;
+display: flex;
+align-items: center;
+
+color: #BD0707;
+}
+
+#wraperprofile{
+  width: 554px;
+/* height: 242px; */
+left: 720px;
+top: 216px;
+
+background: #F7DADA;
+border-radius: 10px;
+
+}
+#updateProfile{
+  width:213px;
+  height:50px;
+  background-color:#BD0707;
 }

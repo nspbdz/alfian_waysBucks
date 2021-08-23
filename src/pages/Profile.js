@@ -4,6 +4,7 @@ import { UserContext } from "../contexts/userContext";
 import ProfileList from "../components/ProfileList";
 import OrderList from "../components/OrderList";
 import dataTransaction from "../data/transaction.json"
+import "../styles/customStyle.css";
 
 function Profile() {
   const {state, dispatch} = useContext(UserContext);
@@ -33,7 +34,7 @@ console.log(dataTransaction)
           />
         </Form.Group>
         
-        <Button type="submit" style={{width:"213px",height:"50px",backgroundColor:"#613D2B"}} >
+        <Button  id="updateProfile"  >
           update profile
         </Button>
     

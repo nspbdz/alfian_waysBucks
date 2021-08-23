@@ -3,6 +3,7 @@ import OrderItem from "./OrderItem";
 import { Row,Col,Card, Button } from "react-bootstrap";
 import qr from "../assets/images/qr.jpg";
 import icon from "../assets/images/brand-icon.svg";
+import "../styles/customStyle.css";
 
 
 import not_found from "../assets/images/not_found.svg";
@@ -23,7 +24,7 @@ console.log(transactions)
       )}
       
        {transactions?.length > 0 &&(
-      <Row style={{backgroundColor:"#F6DADA"}}>
+      <Row id="wraperprofile" >
           <Col sm="7" >
 
           {transactions?.map((item, index) => (
@@ -34,17 +35,17 @@ console.log(transactions)
         <img   src={item.image}  style={{width:"80px",height:"97px",marginTop:"14px",marginLeft:"28px",objectFit: "cover", borderRadius:"10px"}}   />
         </Col>
 
-        <Col  sm="7">
-            <h5  id="MyTransactionText" style={{marginTop:"25px"}}>{item.name}</h5>
-            <p style={{fontSize:"12px"}}>{nowss}</p> 
+        <Col  sm="8">
+            <h5  id="MyTransactionname" className="h4 font-weight-bold" style={{marginTop:"25px"}}>{item.name}</h5>
+            <p id="date">{nowss}</p> 
             <p id="MyTransactionText">Toping : &nbsp;
                  {item.toping.map((items) => (
                     <div  id="Mytoping" >
-                        <p> {items.name} </p>
+                        <p> {items.name +","} </p>
                     </div>
                   ))}
                  </p>
-            <p id="MyTransactionText" style={{paddingBottom:"5px"}}>{item.price}</p>
+            <p id="MyTransactionText" style={{paddingBottom:"5px"}}>Price : Rp.{item.price}</p>
         </Col>
         
       </Row>
@@ -56,11 +57,12 @@ console.log(transactions)
           <Col sm="4" >
 
           <div style={{alignItems:"center"}}>
-          <img src={icon}  style={{width:"100px", height:"32px",display:"block",marginLeft: "auto",marginRight:"auto",marginBottom:"5px",marginTop:"20px"}} />
-          <img src={qr}  style={{width:"70px",height:"70px",marginBottom:"10px",marginTop:"12px",display:"block",marginLeft: "auto",marginRight:"auto"}} />
-            <Button  style={{ display:"block",marginLeft: "auto",marginRight:"auto",width:"150px",height:"35px",backgroundColor:"#00D1FF"}}  > 
-            <p style={{color:"#FFfff",fontSize:"5"}}>{status} </p> 
-            <p>Sub Total: {subtotal}</p>
+          <img src={icon} id="iconprofile"  />
+          <img src={qr}  id="qr" />
+
+            <Button id="profilestatus"   > 
+            <p id="statustext">{status} </p> 
+            <p id="subtotaltext">Sub Total: {subtotal}</p>
             </Button>
       </div>
 
