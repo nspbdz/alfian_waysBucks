@@ -3,10 +3,11 @@ import { CartContext } from '../contexts/cartContext';
 import { UserContext } from '../contexts/userContext';
 import {Button, Card, Col, Row,Form} from 'react-bootstrap';
 import { BsTrash } from "react-icons/bs";
-import fakeCartToping from "../data/topingCart.json"
+// import fakeCartToping from "../data/topingCart.json"
 import fakeCartProduct from "../data/productCart.json"
 import "../styles/cartStyle.css";
 import imgFilebtn from "../assets/images/imgFilebtn.svg"
+
 function Cart() {
   const [dataState,setDataState]= useState([])
   const {state, dispatch} = useContext(CartContext);
@@ -17,9 +18,6 @@ function Cart() {
     setDataState(fakeProduct)
   }
   console.log(dataState)
-
-  
-
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -61,10 +59,12 @@ function Cart() {
       {state.carts.length > 0 && ( */}
       {fakeProduct.length < 1 && (<p className="h1">Your cart is empty</p>)}
       {fakeProduct.length > 0 && (
-        <Row >
+        <Row  id="cartList">
           <Col sm="1">
           </Col>
-        <Col sm="4">
+        <Col sm="4" >
+          <h4> My Cart</h4>
+          <p>Review Your Order</p>
          <hr></hr>
 
           <div style={{width:"524px",marginBottom:"5px",marginTop:"10px"}}>

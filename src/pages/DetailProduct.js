@@ -6,9 +6,11 @@ import NotFound from "./NotFound";
 import CardList from "../components/CardList";
 import { CartContext } from "../contexts/cartContext";
 import  "../styles/customStyle.css"
+import fakecart from "../data/cart.json"; 
 
 
 const DetailProduct = ({ match }) => {
+  console.log(fakecart.user.cart)
   const [topingPrice,setTopingPrice]= useState([])
   const [getTopping, setGetTopping] = useState('');
   const data=dataProduct.user.product;
@@ -22,13 +24,15 @@ const DetailProduct = ({ match }) => {
   const params = useParams();
   const [topings,setTopings] = useState([])
   const [qty,setQty] = useState(1)
- 
+
+  const [dataCart, setDataCart] = useState({
+    cart:fakecart.user.cart
+  })
   const getLocalToping=localStorage.getItem("dataToping")
   // console.log(getLocalToping)
   const ParseJson=JSON.parse(getLocalToping)  
 // console.log(ParseJson)
 const DataTopings=ParseJson.toping
-  console.log(setDataToping)
    const parseData = () => {
     setDataToping(DataTopings)
   }
@@ -71,50 +75,74 @@ const DataTopings=ParseJson.toping
     {
       newArray = newArray.filter(day => day !== topingId );
     }
-    // var price=item.data.price;
     var price=0;
+    // var TopingName="";
         for(var i=0; i<=newArray.length; i++ ) 
         {
           const findData= DataTopings.find(data => data.id === i )
           if (findData !== undefined) {
          price +=findData.price
+        //  TopingName +=findData.name + ","
           }
         }
         setGetPrice(price)
     console.log(newArray)
-    console.log(price)
+    // console.log(price)
      setTopings( newArray );
     console.log("DataTopings",DataTopings)
   } 
 
   const addQty = () => {
     setQty(qty + 1);
-    // setProductItem({
-    //   ...ProductItem,
-    //   // item,
-    //   pricess:qty * item.data.price
-    // })
-    
   };
   const removeQty = () => {
     if(qty === 1){
       return;  
     }
     setQty(qty - 1);
-    // setProductItem({
-    //   ...ProductItem,
-    //   pricess:qty * item.data.price
-    // })
+  
   };
 
   const addProduct = (item) => {
-    // setProductItem(ProductItem+getPrice)
+  console.log("dataTopingsDipilih",topings)
+
+console.log(item)
+ var TopingName=[];
+ for(var i=0; i<=topings.length; i++ ) 
+ {
+   const finTopingName= DataTopings.find(data => data.id === i )
+   if (finTopingName !== undefined) {
+    //  console.log(finTopingName.name)
+  TopingName +=[finTopingName.name + ", "]
+  
+   }
+ }
+ console.log(TopingName)
+    setDataCart((prevDataProduct=> ({
+      ...prevDataProduct,
+      cart: [...prevDataProduct.cart, {
+        item,
+        total: qty * item.price + getPrice,
+       
+        toping: [ {
+          TopingName
+          
+        }]
+      }]
+  })  ))
+  
     dispatch({
       type: "ADD_PRODUCT",
       data:item,
     }) 
   }
-  console.log(ProductItem)
+
+  const JsonString=JSON.stringify(dataCart);
+  localStorage.setItem("dataCart", JsonString)
+  console.log("dataTopingsDipilih",topings)
+
+  // console.log("dataToping",dataToping)
+  // console.log("dataCart",dataCart)
 
   return (
     <>
@@ -177,8 +205,6 @@ const DataTopings=ParseJson.toping
                  >
                   <p style={{color:"white"}}>Add to Cart</p>
                 </Button>
-
-              
             </Col>
            
           </Row> 

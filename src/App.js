@@ -15,26 +15,29 @@ import Signup from "./pages/Signup";
 import DetailProduct from "./pages/DetailProduct";
 import {CartContextProvider} from "./contexts/cartContext"
 import {UserContextProvider,UserContext} from "./contexts/userContext";
-import dataFake from "./data/product.json"; 
-import dataToping from "./data/toping.json"; 
-import dataTransactions from "./data/transactions.json"
+import FakeProduct from "./data/product.json"; 
+import fakeToping from "./data/toping.json"; 
+import FakeTransactions from "./data/transactions.json"
+import Fakecart from "./data/cart.json"; 
 
 const App = () => {
 
-  const fakeData=dataFake.user
-  let product=JSON.stringify(fakeData);
+  const fakeData=FakeProduct.user
+  const product=JSON.stringify(fakeData);
   localStorage.setItem("data", product)
 
-  const dataTopings=dataToping.user
-  let toping=JSON.stringify(dataTopings);
+  const dataTopings=fakeToping.user
+  const toping=JSON.stringify(dataTopings);
   localStorage.setItem("dataToping", toping)
 
-  console.log(dataTransactions)
-  const fakeDataTransaction=dataTransactions.data.transaction
-let JsonStrings=JSON.stringify(fakeDataTransaction);
-localStorage.setItem("dataTransaction", JsonStrings)
-console.log(fakeDataTransaction)
-  console.log()
+  console.log(FakeTransactions)
+  const fakeDataTransaction=FakeTransactions.data.transaction
+  const JsonStrings=JSON.stringify(fakeDataTransaction);
+  localStorage.setItem("dataTransaction", JsonStrings)
+
+  const dataCart=Fakecart.user
+  const cart=JSON.stringify(dataCart);
+  localStorage.setItem("dataCart", cart)
   return (
     <div className="App">
       <Router>

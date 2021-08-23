@@ -36,24 +36,15 @@ console.log(dataProduct)
         name: dataUpdate.name,
         price: dataUpdate.price,
         image: dataUpdate.image,
-       
-        // name: "boba 2",
-        // price: 2132,
-        // foto: "12312321.jpg"
       }]
-    // })
-
   })
     ))
   setshow(true)
-    
-   
   }
-  let JsonString=JSON.stringify(dataProduct);
 
+    const JsonString=JSON.stringify(dataProduct);
     localStorage.setItem("data", JsonString)
-
-  console.log(dataProduct)
+    console.log(dataProduct)
 
 
     return (

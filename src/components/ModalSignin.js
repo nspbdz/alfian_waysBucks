@@ -21,7 +21,7 @@ const ModalSignin = (props) => {
     handleLogin({
       type: 'LOGIN',
       payload: {
-        id: 1,
+        id: 2,
         name: "user1",
         email: data.email,
         password: data.password
