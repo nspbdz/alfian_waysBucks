@@ -11,10 +11,9 @@ import  "../styles/customStyle.css"
 const DetailProduct = ({ match }) => {
   const [topingPrice,setTopingPrice]= useState([])
   const [getTopping, setGetTopping] = useState('');
-  const data=dataProduct.user.products;
+  const data=dataProduct.user.product;
   const [dataToping,setDataToping]= useState([])
   const getLocalStorage=localStorage.getItem("dataToping")
-  const DataTopings=JSON.parse(getLocalStorage)  
   const [getPrice, setGetPrice] = useState(null);
   const {state, dispatch} = useContext(CartContext);
   const [item, setItem] = useState(null);
@@ -24,7 +23,12 @@ const DetailProduct = ({ match }) => {
   const [topings,setTopings] = useState([])
   const [qty,setQty] = useState(1)
  
-  
+  const getLocalToping=localStorage.getItem("dataToping")
+  // console.log(getLocalToping)
+  const ParseJson=JSON.parse(getLocalToping)  
+// console.log(ParseJson)
+const DataTopings=ParseJson.toping
+  console.log(setDataToping)
    const parseData = () => {
     setDataToping(DataTopings)
   }
