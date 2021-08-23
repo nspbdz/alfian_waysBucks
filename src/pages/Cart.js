@@ -9,6 +9,12 @@ import "../styles/cartStyle.css";
 import imgFilebtn from "../assets/images/imgFilebtn.svg"
 
 function Cart() {
+
+  const getLocalStorage=localStorage.getItem("dataCart")
+console.log(getLocalStorage)
+const ParseJson=JSON.parse(getLocalStorage)  
+console.log(ParseJson.cart)
+const dataCarts=ParseJson.cart
   const [dataState,setDataState]= useState([])
   const {state, dispatch} = useContext(CartContext);
 
@@ -48,8 +54,9 @@ function Cart() {
     }) 
   
   };
-  {fakeProduct.map((item) => (
-    console.log(item.toping.length)
+
+  {dataCarts.map((item) => (
+    console.log(item.qty)
   ))}
 
  
@@ -57,8 +64,8 @@ function Cart() {
     <div>
       {/* {state.carts.length < 1 && (<p className="h1">Your cart is empty</p>)}
       {state.carts.length > 0 && ( */}
-      {fakeProduct.length < 1 && (<p className="h1">Your cart is empty</p>)}
-      {fakeProduct.length > 0 && (
+      {dataCarts.length < 1 && (<p className="h1">Your cart is empty</p>)}
+      {dataCarts.length > 0 && (
         <Row  id="cartList">
           <Col sm="1">
           </Col>
@@ -68,29 +75,33 @@ function Cart() {
          <hr></hr>
 
           <div style={{width:"524px",marginBottom:"5px",marginTop:"10px"}}>
-        {fakeProduct.map((item) => (
+        {dataCarts.map((item) => (
             <Row >
              <Col md="2">    
                  <img
                      variant="top"
-                     src={item.image}
+                     src={item.item.image}
                      height={80}
                      width={80}
                      style={{ objectFit: "cover" }}
                    />
             </Col>
             <Col md="4" style={{marginTop:"10px"}}>    
-                   <p> {item.name}</p>
+                   <p id="inlinetoping"> {item.item.name}</p>
+                   <br></br>
+                   <p id="inlinetoping"> product Qty: {item.qty}</p>
+                   <p> Toping : &nbsp;
                   {item.toping.map((items) => (
-                   <p> {items.name}</p>
+                   <p id="inlinetoping"> {items.TopingName}</p>
                   ))}
+                  </p>
             </Col>
             <Col md="3">       </Col>
                  <Col md="2" style={{marginTop:"10px"}}>
                  {/* <div   id={"demo"+item.id} value={item.qty*item.price}  > */}
-                 <div   id={"demo"+item.id} value={item.price}  >
+                 <div   id={"demo"+item.id} value={item.item.price}  >
                 {/* <p>  Rp.    {item.qty*item.price} </p> */}
-                <p>  Rp.    {item.price} </p>
+                <p>  Rp.    {item.item.price} </p>
                 <p onClick={() => handleClick(item, "REMOVE_CART")} style={{fontSize:"16px"}}><BsTrash /> </p>
                  </div>
             </Col>
@@ -103,7 +114,7 @@ function Cart() {
             <Col sm="6">
          <hr></hr>
           <Row>
-            <Col sm="4">
+            <Col sm="6">
             <p>Sub Total</p>
             <p>Qty</p>
 
@@ -112,12 +123,34 @@ function Cart() {
 
             </Col>
             <Col sm="4">
-           
+            {dataCarts.map((dataItem) => (
+              <>
+                    <p>{dataItem.item.price}</p>
+                    <br></br>
+                    <p>{dataItem.qty}</p>
+              </>
+
+            ))}
               </Col>
           </Row>
          <hr></hr>
-         <p>Sub Total</p>
-          
+          <Row>
+            <Col sm="4">
+         <p>Total</p>
+
+            </Col>
+            <Col sm="4"></Col>
+            <Col sm="4">
+            {dataCarts.map((dataItem) => (
+              <>
+                    <p>{dataItem.item.price}</p>
+              </>
+
+            ))}
+
+            </Col>
+          </Row>
+
             </Col>
             <Col sm="6">
           <label for="file-upload"  class="custom-file-upload">

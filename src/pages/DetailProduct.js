@@ -31,8 +31,8 @@ const DetailProduct = ({ match }) => {
   const getLocalToping=localStorage.getItem("dataToping")
   // console.log(getLocalToping)
   const ParseJson=JSON.parse(getLocalToping)  
-// console.log(ParseJson)
-const DataTopings=ParseJson.toping
+  // console.log(ParseJson)
+  const DataTopings=ParseJson.toping
    const parseData = () => {
     setDataToping(DataTopings)
   }
@@ -122,8 +122,8 @@ console.log(item)
       ...prevDataProduct,
       cart: [...prevDataProduct.cart, {
         item,
+        qty: qty ,
         total: qty * item.price + getPrice,
-       
         toping: [ {
           TopingName
           
