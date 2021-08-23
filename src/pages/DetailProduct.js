@@ -60,7 +60,7 @@ const DataTopings=ParseJson.toping
         data: itemMatchId,
       });
       setLoading(false);
-    }, 5000);
+    }, 3000);
 
     return () => {
       setItem(null)
@@ -151,8 +151,8 @@ console.log(item)
         <>
           <Row>
             <Col id="detailImg" xs={4}>
-              <div>
-              <img  style={{width:"350px",height:"350px"}}
+              <div id="ImgdetailProduct">
+              <img  
                 src={item.data.image}
                 alt="product"
                 className="shadow-sm img-fluid rounded"
@@ -160,9 +160,9 @@ console.log(item)
                 </div>
             </Col>  
          
-            <Col>
-                 <p className="h1 font-weight-bold">{item.data.name}</p>
-                 <p> Rp. {item.data.price}</p>
+            <Col style={{paddingTop:"20px"}}>
+                 <p id="detailTitle" className="h1 font-weight-bold" >{item.data.name}</p>
+                 <p id="pricestyle"> Rp. {item.data.price}</p>
                       {dataToping.map((item, index) => ( 
                         <div id="topingDiv" >
                             <>
@@ -179,24 +179,31 @@ console.log(item)
                        <Row>
                          <Col sm="4">
                            <>
-                                <Row>
+                                <Row style={{width:"100px" }}>
                                 <Col md="2" >
-                                <p onClick={removeQty}  style={{fontSize:"16px"}}>-</p>
+                                <Button id="plusBtn" onClick={removeQty}  size="sm">
+                                  -
+                                </Button>
                                 </Col>
                                 <Col md="2" >       
-                                  <span >{qty}</span>
+                                  
+                                  <p style={{paddingLeft:"5px"}}> {qty}</p>
                               </Col>
                                 <Col md="2" > 
-                                <p onClick={addQty} style={{fontSize:"16px"}}>+</p>
+                                <Button id="minusBtn" onClick={addQty}  size="sm">
+                                  +
+                                </Button>
                                 </Col>
                               </Row>
                            <h5>Total</h5>
                            </>
 
                          </Col>
-                         <Col sm="4"></Col>
+                         <Col sm="2"></Col>
                          <Col sm="4">
-                       <p> Rp. { qty * item.data.price + getPrice }</p>
+                          <br></br>
+                          <br></br>
+                       <p id="totaltitle"> Rp. { qty * item.data.price + getPrice }</p>
 
                          </Col>
                        </Row>

@@ -39,10 +39,9 @@
    height:30px
 }
 #detailImg{
-  width:400px ;
-   height:400px ;
-   margin-left: 40px;
-   margin-top: 50px;
+
+   margin-left: 60px;
+   margin-top: 30px;
 }
 #topingStyle{
   width:100px ;
@@ -144,3 +143,29 @@ width:15px;
   background-color: #BD0707;
 }
 
+#plusBtn{
+  background-color: #BD0707;
+}
+#minusBtn{
+  background-color: #BD0707;
+}
+#detailTitle{
+
+  color:#BD0707
+}
+#totaltitle{
+  font-size: 24px;
+  color: #974A4A;
+  font-weight: bold;
+}
+#pricestyle{
+  font-size: 24px;
+  color: #974A4A;
+}
+#ImgdetailProduct{
+  object-fit: "cover";
+  width:310px ;
+  height:450px ;
+  margin-left: 60px;
+  /* margin-top: 10px; */
+}
