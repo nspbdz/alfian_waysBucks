@@ -73,7 +73,7 @@ useEffect(() => {
           {!state.isLogin && ( 
             <Col md="auto" >
               <img src={Jumbotron} />
-              <p>Let’s Order</p>
+              <p id="letsHome">Let’s Order</p>
               <CardList data={dataState}/>
 
               {/* <CardList data={data}/> */}

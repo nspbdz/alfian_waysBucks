@@ -10,7 +10,7 @@ const ModalProduct = (props) => {
     <Modal className="my-modal" show={show} onHide={handleClose} centered>
       <Modal.Body>
 
-        <p>New Product successfully Added</p>
+        <p>Thank you for ordering in us, please wait to verify you order</p>
 
 
       </Modal.Body>

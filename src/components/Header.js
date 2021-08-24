@@ -1,6 +1,6 @@
 import { useState, useContext, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
-import {Row,Col,Badge, Button,  FormControl,  InputGroup,  Form,  Navbar,  Nav,} from "react-bootstrap";
+import { Row, Col, Badge, Button, FormControl, InputGroup, Form, Navbar, Nav, } from "react-bootstrap";
 import shopcart from "../assets/images/shopcart.svg";
 import { UserContext } from "../contexts/userContext";
 import { CartContext } from "../contexts/cartContext";
@@ -15,12 +15,12 @@ import "../styles/customStyle.css";
 const Header = () => {
   // const [showSignin, setshowSignin] = useState(false);
   const [showSignup, setshowSignup] = useState(false);
- 
-  const {state, dispatch} = useContext(UserContext);
-  const {state: cartState} = useContext(CartContext);
+
+  const { state, dispatch } = useContext(UserContext);
+  const { state: cartState } = useContext(CartContext);
   console.log("user context state", state)
   console.log("user id ", state.user.id)
-  
+
   console.log("cart context state", cartState)
   const [search, setSearch] = useState("");
   const [show, setshow] = useState(false);
@@ -57,71 +57,71 @@ const Header = () => {
   };
 
   return (
-    
+
     <Navbar expand="lg">
-    
-    <Link to="/" className="navbar-brand" id="logo">
-      <img src={Icon} alt="brand" />
-    </Link>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="mr-auto">
-      </Nav>
-    
-      {state.isLogin==true && state.user.id==1 &&(
 
-        <>
+      <Link to="/" className="navbar-brand" id="logo">
+        <img src={Icon} alt="brand" />
+      </Link>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+        </Nav>
 
-         <Row>
-           <Col sm="2" className="navbarDropdown">
-         <AdminDropdown />
-           </Col>
-           <Col sm="5"></Col>
-           <Col sm="5"></Col>
+        {state.isLogin == true && state.user.id == 1 && (
 
-         </Row>
-          
-        
-        </>
-      )}
-       {state.isLogin==true && state.user.id==2 &&(
+          <>
 
-        <>  
+            <Row>
+              <Col sm="2" className="navbarDropdown">
+                <AdminDropdown />
+              </Col>
+              <Col sm="5"></Col>
+              <Col sm="5"></Col>
 
-         <div id="cartWrap">
-         <Link to="/cart" >  
-          <img   src={shopcart}  className="shopCart" /> {' '}
-          <Badge  id="badgeCart" className="bg-danger text-white">   {cartState.carts.length}</Badge>
-          </Link>
-         </div>
-         <div id="userDropd">
-           <UserDropdown />
-         </div>
-          
-       
-        </>
+            </Row>
+
+
+          </>
         )}
-     {!state.isLogin && ( 
-        <>
-          <div id="pading">
-          <Button className="my-2" onClick={() => setshow(true)}  variant="light">
-            Login
-          </Button>
-          </div>
-          <Button id="warna" className="mr-3 my-2" onClick={() => setshowSignup(true)}   >
-             Register
-          </Button>
-      
-      <ModalSignin show={show} handleClose={() => setshow(false)} handleLogin={dispatch}/>
+        {state.isLogin == true && state.user.id == 2 && (
 
-          <ModalSignup
-            show={showSignup}
-            handleClose={() => setshowSignup(false)}
-          />
-        </>
-       )}
-    </Navbar.Collapse>
-  </Navbar>
+          <>
+
+            <div id="cartWrap">
+              <Link to="/cart" >
+                <img src={shopcart} className="shopCart" /> {' '}
+                <Badge id="badgeCart" className="bg-danger text-white">   {cartState.carts.length}</Badge>
+              </Link>
+            </div>
+            <div id="userDropd">
+              <UserDropdown />
+            </div>
+
+
+          </>
+        )}
+        {!state.isLogin && (
+          <>
+            <div id="pading">
+              <Button className="my-2" onClick={() => setshow(true)} variant="light">
+                Login
+          </Button>
+            </div>
+            <Button id="warna" className="mr-3 my-2" onClick={() => setshowSignup(true)}   >
+              Register
+          </Button>
+
+            <ModalSignin show={show} handleClose={() => setshow(false)} handleLogin={dispatch} />
+
+            <ModalSignup
+              show={showSignup}
+              handleClose={() => setshowSignup(false)}
+            />
+          </>
+        )}
+      </Navbar.Collapse>
+    </Navbar>
 
   );
 };

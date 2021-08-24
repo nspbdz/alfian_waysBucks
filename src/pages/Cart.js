@@ -7,6 +7,7 @@ import { BsTrash } from "react-icons/bs";
 import fakeCartProduct from "../data/productCart.json"
 import "../styles/cartStyle.css";
 import imgFilebtn from "../assets/images/imgFilebtn.svg"
+import ModalTransaction from "../components/ModalTransaction"
 
 function Cart() {
 
@@ -16,7 +17,7 @@ const ParseJson=JSON.parse(getLocalStorage)
 console.log(ParseJson.cart)
 const dataCarts=ParseJson.cart
 
-
+  const [show, setshow] = useState(false);
   const [dataState,setDataState]= useState([])
   const {state, dispatch} = useContext(CartContext);
   const [dataUpdate, setDataUpdate] = useState([])
@@ -89,6 +90,7 @@ const dataCarts=ParseJson.cart
         }]
       }]
   })  ))
+  setshow(true)
     
 
 }
@@ -260,6 +262,7 @@ console.log(dataTransaction)
   />
 </Form.Group> */}
 <Button onClick={handleOnSubmit} id="payBtn" >pay</Button>
+<ModalTransaction show={show} handleClose={() => setshow(false)} />
 
 </Form>
 
