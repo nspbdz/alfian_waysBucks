@@ -47,7 +47,7 @@ console.log(dataTransaction)
     <Col xs={1}></Col>
   <Col xs={5}  >
     <>
-    <h4 style={{paddingTop:"70px"}}>My Transaction</h4>
+    <h4 id="myTransaction" >My Transaction</h4>
 
    <OrderList data={dataTransaction}   />
    </>

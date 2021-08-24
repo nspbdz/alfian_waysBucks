@@ -105,8 +105,8 @@ console.log(dataTransaction)
           <Col sm="1">
           </Col>
         <Col sm="4" >
-          <h4> My Cart</h4>
-          <p>Review Your Order</p>
+          <h4 id="myCart" > My Cart</h4>
+          <p id="reviewCart" >Review Your Order</p>
          <hr></hr>
 
           <div style={{width:"524px",marginBottom:"5px",marginTop:"10px"}}>
@@ -121,23 +121,23 @@ console.log(dataTransaction)
                      style={{ objectFit: "cover" }}
                    />
             </Col>
-            <Col md="4" style={{marginTop:"10px"}}>    
-                   <p id="inlinetoping"> {item.item.name}</p>
+            <Col md="5" style={{marginTop:"10px"}}>    
+                   <p  className="productName"> {item.item.name}</p>
                    <br></br>
-                   <p id="inlinetoping"> product Qty: {item.qty}</p>
-                   <p> Toping : &nbsp;
+                   {/* <p id="productName"> product Qty: {item.qty}</p> */}
+                   <p id="topingText"> Toping : 
                   {item.toping.map((items) => (
-                   <p id="inlinetoping"> {items.TopingName}</p>
+                   <p  id="topingName"> {items.TopingName}</p>
                   ))}
                   </p>
             </Col>
-            <Col md="3">       </Col>
+            <Col md="2">       </Col>
                  <Col md="2" style={{marginTop:"10px"}}>
                  {/* <div   id={"demo"+item.id} value={item.qty*item.price}  > */}
-                 <div   id={"demo"+item.id} value={item.item.price}  >
+                 <div className="productPrice"  id={"demo"+item.id} value={item.item.price}  >
                 {/* <p>  Rp.    {item.qty*item.price} </p> */}
-                <p>  Rp.    {item.item.price} </p>
-                <p onClick={() => handleClick(item, "REMOVE_CART")} style={{fontSize:"16px"}}><BsTrash /> </p>
+                <p>  Rp.{item.item.price} </p>
+                <p onClick={() => handleClick(item, "REMOVE_CART")} id="trashIcon" ><BsTrash /> </p>
                  </div>
             </Col>
           </Row>
@@ -150,8 +150,8 @@ console.log(dataTransaction)
          <hr></hr>
           <Row>
             <Col sm="6">
-            <p>Sub Total</p>
-            <p>Qty</p>
+            <p id="subTotalProduct">Sub Total</p>
+            <p id="subTotalProduct">Qty</p>
 
             </Col>
             <Col sm="2">
@@ -160,9 +160,9 @@ console.log(dataTransaction)
             <Col sm="4">
             {dataCarts.map((dataItem) => (
               <>
-                    <p>{dataItem.item.price}</p>
-                    <br></br>
-                    <p>{dataItem.qty}</p>
+                    <p id="dataItem" >{dataItem.item.price}</p>
+                    
+                    <p id="dataItem">{dataItem.qty}</p>
               </>
 
             ))}
@@ -171,7 +171,7 @@ console.log(dataTransaction)
          <hr></hr>
           <Row>
             <Col sm="4">
-         <p>Total</p>
+         <p id="totalPrice" >Total</p>
 
             </Col>
             <Col sm="4"></Col>
@@ -199,8 +199,7 @@ console.log(dataTransaction)
           </Col>
           <Col sm="4" style={{paddingLeft:"20px"}}>
             
-<h4 style={{marginTop:"77px"}}>Shipping</h4>
- <Form 
+ <Form style={{marginTop:"77px"}} 
 //  onSubmit={handleSubmit}
  >
 <Form.Group>

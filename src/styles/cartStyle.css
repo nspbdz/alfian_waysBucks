@@ -31,3 +31,165 @@ hr {
   background-color:#BD0707;
   width:414px;
 }
+#myCart{
+  width: 92px;
+height: 33px;
+left: 195px;
+top: 157px;
+
+font-family: Avenir;
+
+font-weight: 900;
+font-size: 24px;
+line-height: 33px;
+/* identical to box height */
+
+
+color: #BD0707;
+}
+#reviewCart{
+  width: 152px;
+height: 25px;
+left: 195px;
+top: 216px;
+
+font-family: Avenir;
+
+font-weight: normal;
+font-size: 18px;
+line-height: 25px;
+/* identical to box height */
+
+
+color: #BD0707;
+
+}
+
+.productName{
+
+font-family: Avenir;
+display: inline-block;
+
+font-weight: 900;
+font-size: 14px;
+display: flex;
+
+color: #BD0707;
+}
+
+#topingName{
+  width: 228px;
+height: 19px;
+left: 341px;
+top: 314px;
+
+font-family: Avenir;
+
+font-weight: normal;
+font-size: 14px;
+line-height: 19px;
+display: flex;
+align-items: center;
+
+color: #BD0707;
+}
+
+.productPrice{
+font-family: Avenir;
+font-weight: normal;
+font-size: 14px;
+line-height: 19px;
+color: #BD0707;
+}
+
+#traashIcon{
+  color: #BD0707;
+}
+
+#subTotalProduct{
+font-family: Avenir;
+font-size: 14px;
+line-height: 19px;
+color: #BD0707;
+}
+#totalPrice{
+
+font-family: Avenir;
+
+font-weight: 800;
+font-size: 14px;
+line-height: 19px;
+
+color: #BD0707;
+}
+
+#dataItem{
+font-family: Avenir;
+font-size: 14px;
+line-height: 19px;
+
+color: #BD0707;
+}
+
+#topingText{
+  font-family: Avenir;
+font-weight: 800;
+font-size: 14px;
+display: inline-block;
+
+color: #974A4A;
+}
+
+#topingName{
+  display: inline-block;
+
+font-family: Avenir;
+font-weight: normal;
+font-size: 14px;
+/* line-height: 19px; */
+/* display: flex; */
+/* align-items: center; */
+
+color: #BD0707;
+}
+#myProfileText{
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 33px;
+  /* identical to box height */
+  
+  
+  color: #BD0707;
+}
+
+#profileName{
+padding-top: 70px;
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  color: #613D2B;
+}
+
+#emailName {
+  font-family: Avenir;
+font-style: normal;
+font-weight: 800;
+font-size: 18px;
+/* identical to box height */
+
+
+color: #613D2B;
+
+}
+#myTransaction{
+  font-family: Avenir;
+font-style: normal;
+font-weight: 900;
+font-size: 24px;
+line-height: 33px;
+color: #613D2B;
+padding-top: 70px;
+}

@@ -157,6 +157,7 @@ width:15px;
   color:#BD0707
 }
 #totaltitle{
+  margin-top: 33px;
   font-size: 24px;
   color: #974A4A;
   font-weight: bold;
@@ -211,11 +212,9 @@ width:15px;
     /* background-color:linear-gradient(to left, #00D1FF 100%, #00D1FF 100%) */
 }
 #statustext{
+  margin-left: 10px;
   width: 112px;
 height: 19px;
-left: 1116px;
-/* top: 388px; */
-  /* padding-top: 5px; */
   color: #00D1FF;
   font-size: 12px;
 }
@@ -284,4 +283,66 @@ border-radius: 10px;
   width:213px;
   height:50px;
   background-color:#BD0707;
+}
+
+#letsHome{
+  width: 192px;
+height: 49px;
+left: 196px;
+top: 619px;
+
+font-family: Avenir;
+font-style: normal;
+font-weight: 900;
+font-size: 36px;
+line-height: 49px;
+
+color: #BD0707;
+}
+#cardTitle{
+  width: 188px;
+  height: 25px;
+  left: 212px;
+  top: 1032px;
+  
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 25px;
+  /* identical to box height */
+  
+  
+  color: #BD0707;
+}
+#cardPrice{
+  width: 64px;
+  height: 19px;
+  left: 212px;
+  top: 1063px;
+  
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  
+  color: #974A4A;
+}
+#cardBody{
+  width: 241px;
+  height: auto;
+  left: 196px;
+  top: 706px;
+  background: #F7DADA;
+  border-radius: 10px;
+
+}  
+
+#topingWrap{
+  width: 420px;
+  /* height: ; */
+}
+#topingImgWrap{
+  width: 110px;
 }

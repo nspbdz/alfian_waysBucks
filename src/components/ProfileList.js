@@ -16,20 +16,20 @@ const ProfileList = ({ data, loading,  }) => {
 {item ? 
 
           <>
-    <Col xs={8}>
+    <Col xs={6}>
           <div>
-            <h4 style={{paddingTop:"70px"}}>My Profile</h4>
+            <h4 id="myProfileText" style={{paddingTop:"70px"}}>My Profile</h4>
             {item.image? <img src={item.image} style={{width:"180px", height:"220px"}} /> :null}
     {/* <img  width="300" height="280" src="https://s1.ibtimes.com/sites/www.ibtimes.com/files/styles/full/public/2020/06/17/mark-zuckerberg-has-been-strongly-criticized-for-facebooks.jpg" />  */}
 
     </div>
     </Col>
-    <Col xs={4}> 
+    <Col sm="4" > 
     <br></br>
     <br></br> 
-    <h5 style={{paddingTop:"70px"}}> Full Name   </h5>
+    <h5 id="profileName" > Full Name   </h5>
     <p>   {item.name}    </p>
-    <h5> Email </h5>
+    <h5 id="emailName"> Email </h5>
     <p>   {item.email}    </p>
      </Col>
 

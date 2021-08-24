@@ -60,7 +60,7 @@ const DetailProduct = ({ match }) => {
         data: itemMatchId,
       });
       setLoading(false);
-    }, 3000);
+    }, 2000);
 
     return () => {
       setItem(null)
@@ -150,7 +150,7 @@ const DetailProduct = ({ match }) => {
       {(!loading && item.data) && (
         <>
           <Row>
-            <Col id="detailImg" xs={4}>
+            <Col id="detailImg" sm="4">
               <div id="ImgdetailProduct">
               <img  
                 src={item.data.image}
@@ -160,17 +160,17 @@ const DetailProduct = ({ match }) => {
                 </div>
             </Col>  
          
-            <Col style={{paddingTop:"20px"}}>
+            <Col sm="6" style={{paddingTop:"20px"}}>
                  <p id="detailTitle" className="h1 font-weight-bold" >{item.data.name}</p>
                  <p id="pricestyle"> Rp. {item.data.price}</p>
                       {dataToping.map((item, index) => ( 
-                        <div id="topingDiv" >
+                        <div id="topingWrap" id="topingDiv" >
                             <>
                             <input name={item.name} value={item.id} type="checkbox" id={` "myCheckbox ${item.id} " `} 
                             className="check"
                             onChange={findTopping}
                             />
-                            <label for={` "myCheckbox ${item.id} " `} >
+                            <label id="topingImgWrap" for={` "myCheckbox ${item.id} " `} >
                             <img  src={item.image} id="topingStyle" class="topingstyle" />
                               </label>
                             </>
@@ -201,8 +201,6 @@ const DetailProduct = ({ match }) => {
                          </Col>
                          <Col sm="2"></Col>
                          <Col sm="4">
-                          <br></br>
-                          <br></br>
                        <p id="totaltitle"> Rp. { qty * item.data.price + getPrice }</p>
 
                          </Col>

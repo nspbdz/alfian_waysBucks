@@ -59,7 +59,7 @@ useEffect(() => {
            {state.isLogin==true && state.user.id==2 &&(
             <Col md="auto" >
               <img src={Jumbotron} />
-              <p>Let’s Order</p>
+              <p id="letsHome" >Let’s Order</p>
               <CardList data={dataState}/>
               {/* <CardList data={data}/> */}
               

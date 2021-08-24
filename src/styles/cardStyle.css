@@ -63,4 +63,15 @@ img {
 
 input[type="checkbox"][id^="myCheckbox"] {
   display: none;
+} 
+.classCard{
+  border-radius: 10px;
+  
+}
+#cardImage{
+  object-fit: cover;
+  width:241px;
+   height:321px;
+   border:none;
+/* background: url(de778c59b572c667d3469202c5ea54e1.jpg); */
 }
