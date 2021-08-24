@@ -1,4 +1,4 @@
-import { Row, Col,Container } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 
 import CardList from "../components/CardList";
 import data from "../data/fakeData";
@@ -7,18 +7,18 @@ import { useState, useContext, useEffect } from "react";
 import { UserContext } from "../contexts/userContext";
 import TransactionList from "../components/TransactionList"
 // import TransactionData from "../data/Transaction"
-import  "../styles/customStyle.css"
+import "../styles/customStyle.css"
 // import dataFake from "../data/topinga.json"; 
 
 const Home = () => {
 
-  const {state, dispatch} = useContext(UserContext);
-  const [dataState,setDataState]= useState([])
+  const { state, dispatch } = useContext(UserContext);
+  const [dataState, setDataState] = useState([])
 
-const getLocalStorage=localStorage.getItem("data")
-console.log(getLocalStorage)
-const ParseJson=JSON.parse(getLocalStorage)  
-console.log(ParseJson.product)
+  const getLocalStorage = localStorage.getItem("data")
+  console.log(getLocalStorage)
+  const ParseJson = JSON.parse(getLocalStorage)
+  console.log(ParseJson.product)
 
   const parseData = () => {
     setDataState(ParseJson.product)
@@ -26,64 +26,64 @@ console.log(ParseJson.product)
   console.log(dataState)
 
 
-useEffect(() => { 
-  parseData()
-}, []); 
+  useEffect(() => {
+    parseData()
+  }, []);
 
 
   return (
     <>
       <Container  >
 
-        {state.isLogin==true && state.user.id==1 &&(
+        {state.isLogin == true && state.user.id == 1 && (
           <>
-          <h3 className="title">Income Transaction</h3>
-        <Row className="justify-content-md-center" >
-          <>
+            <h3 className="title">Income Transaction</h3>
+            <Row className="justify-content-md-center" >
+              <>
 
-          <Col sm="1"></Col>
-          <Col sm="10"  >
-            <TransactionList  />
+                <Col sm="1"></Col>
+                <Col sm="10"  >
+                  <TransactionList />
 
-          </Col>
-          <Col sm="1"></Col>
+                </Col>
+                <Col sm="1"></Col>
+              </>
+            </Row>
           </>
-        </Row>
-        </>
 
-         )}   
+        )}
       </Container>
-    
-      <Container style={{display:'flex'}} >
+
+      <Container style={{ display: 'flex' }} >
         <Row >
-           {state.isLogin==true && state.user.id==2 &&(
+          {state.isLogin == true && state.user.id == 2 && (
             <Col md="auto" >
               <img src={Jumbotron} />
               <p id="letsHome" >Let’s Order</p>
-              <CardList data={dataState}/>
+              <CardList data={dataState} />
               {/* <CardList data={data}/> */}
-              
+
             </Col>
           )}
         </Row>
       </Container>
-      <Container style={{display:'flex'}} >
+      <Container style={{ display: 'flex' }} >
 
-      <Row className="justify-content-md-center" >
-          {!state.isLogin && ( 
+        <Row className="justify-content-md-center" >
+          {!state.isLogin && (
             <Col md="auto" >
               <img src={Jumbotron} />
               <p id="letsHome">Let’s Order</p>
-              <CardList data={dataState}/>
+              <CardList data={dataState} />
 
               {/* <CardList data={data}/> */}
-           </Col>
-        )} 
-      </Row>
+            </Col>
+          )}
+        </Row>
       </Container>
     </>
-        
+
 
   )
-} 
+}
 export default Home;

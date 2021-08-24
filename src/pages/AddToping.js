@@ -1,9 +1,9 @@
 import { useState } from "react";
 // import { Form, Button } from "react-bootstrap";
-import { Row,Button, Col } from "react-bootstrap";
+import { Row, Button, Col } from "react-bootstrap";
 import AddTopingForm from "../components/form/AddTopingForm";
 // import ProductDetailItem from "../components/ProductDetailItem"
-import data from "../data/product.json"; 
+import data from "../data/product.json";
 
 function AddToping(props) {
 
@@ -11,37 +11,37 @@ function AddToping(props) {
 
   return (
     <div>
-    <Row>
-    <Col>
-    {/* <ProductDetailItem /> */}
-    <Row>
-                    
-      <Col >
-        <>
-      <AddTopingForm />
-      <br></br>
-      <br></br>
-
       <Row>
-        <Col sm="5"></Col>
-        <Col sm="2">
+        <Col>
+          {/* <ProductDetailItem /> */}
+          <Row>
+
+            <Col >
+              <>
+                <AddTopingForm />
+                <br></br>
+                <br></br>
+
+                <Row>
+                  <Col sm="5"></Col>
+                  <Col sm="2">
+                  </Col>
+
+                  <Col sm="5">
+
+                  </Col>
+                </Row>
+                {/* </Button> */}
+              </>
+            </Col>
+
+          </Row>
+
+
         </Col>
-        
-        <Col sm="5">
-      
-        </Col>
+
       </Row>
-      {/* </Button> */}
-      </>
-        </Col>
-
-        </Row> 
-
-    
-    </Col>
-   
-  </Row>
-</div>
+    </div>
   );
 }
 

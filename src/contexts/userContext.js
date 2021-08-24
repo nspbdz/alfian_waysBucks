@@ -1,4 +1,4 @@
-import {createContext, useReducer} from 'react';
+import { createContext, useReducer } from 'react';
 
 export const UserContext = createContext();
 
@@ -13,9 +13,9 @@ const initialState = {
 }
 
 const userReducer = (state, action) => {
-  const {type, payload} = action;
+  const { type, payload } = action;
 
-  switch(type) {
+  switch (type) {
     case 'LOGIN':
       return {
         ...state,
@@ -39,7 +39,7 @@ const userReducer = (state, action) => {
   }
 }
 
-export const UserContextProvider = ({children}) => {
+export const UserContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(userReducer, initialState);
 
   return (

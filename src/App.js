@@ -13,30 +13,30 @@ import Header from "./components/Header";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import DetailProduct from "./pages/DetailProduct";
-import {CartContextProvider} from "./contexts/cartContext"
-import {UserContextProvider,UserContext} from "./contexts/userContext";
-import FakeProduct from "./data/product.json"; 
-import fakeToping from "./data/toping.json"; 
+import { CartContextProvider } from "./contexts/cartContext"
+import { UserContextProvider, UserContext } from "./contexts/userContext";
+import FakeProduct from "./data/product.json";
+import fakeToping from "./data/toping.json";
 import FakeTransactions from "./data/transactions.json"
-import Fakecart from "./data/cart.json"; 
+import Fakecart from "./data/cart.json";
 
 const App = () => {
 
-  const fakeData=FakeProduct.user
-  const product=JSON.stringify(fakeData);
+  const fakeData = FakeProduct.user
+  const product = JSON.stringify(fakeData);
   localStorage.setItem("data", product)
 
-  const dataTopings=fakeToping.user
-  const toping=JSON.stringify(dataTopings);
+  const dataTopings = fakeToping.user
+  const toping = JSON.stringify(dataTopings);
   localStorage.setItem("dataToping", toping)
 
   console.log(FakeTransactions)
-  const fakeDataTransaction=FakeTransactions.data.transaction
-  const JsonStrings=JSON.stringify(fakeDataTransaction);
+  const fakeDataTransaction = FakeTransactions.data.transaction
+  const JsonStrings = JSON.stringify(fakeDataTransaction);
   localStorage.setItem("dataTransaction", JsonStrings)
 
-  const dataCart=Fakecart.user
-  const cart=JSON.stringify(dataCart);
+  const dataCart = Fakecart.user
+  const cart = JSON.stringify(dataCart);
   localStorage.setItem("dataCart", cart)
   return (
     <div className="App">
@@ -47,7 +47,7 @@ const App = () => {
             <Container fluid>
               <Switch>
                 <Route exact path="/" component={Home} />
-                <PrivateRoute  exact path="/product/:id" component={DetailProduct} />
+                <PrivateRoute exact path="/product/:id" component={DetailProduct} />
                 <PrivateRoute exact path="/addproduct" component={AddProduct} />
                 <PrivateRoute exact path="/profile" component={Profile} />
                 <PrivateRoute exact path="/cart" component={Cart} />

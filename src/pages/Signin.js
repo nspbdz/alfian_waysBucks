@@ -9,7 +9,7 @@ const Signin = () => {
       [e.target.name]: e.target.value,
     });
   };
-  const handleSubmit = () => {};
+  const handleSubmit = () => { };
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
